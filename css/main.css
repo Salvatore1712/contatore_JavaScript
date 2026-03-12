@@ -1,1 +1,51 @@
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+h1 .java-text {
+  color: #FFEA00;
+  font-size: 64px;
+}
+
+.box-game {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  border: 3px dotted white;
+  height: 300px;
+}
+.box-game .contatore {
+  font-size: 6rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 1500px;
+  background-color: black;
+  color: white;
+  font-family: "Press Start 2P", system-ui;
+}
+
+#container {
+  border: 3px dotted white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  height: 50dvh;
+  padding: 16px;
+}/*# sourceMappingURL=main.css.map */
