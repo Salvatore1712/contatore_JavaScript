@@ -44,12 +44,13 @@ h3 {
   height: 30%;
 }
 .message h2 {
+  opacity: 0;
   color: #FF0000;
 }
 
 .coin-text {
   color: white;
-  font-size: clamp(2rem, 30px, 3rem);
+  font-size: clamp(1.5rem, 25px, 2rem);
   animation: coinAlert 1s ease-in-out infinite;
 }
 

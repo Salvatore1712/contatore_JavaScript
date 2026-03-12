@@ -47,13 +47,14 @@ h3 {
     height: 30%;
 
     h2 {
+        opacity: 0;
         color: variables.$darkRed;
     }
 }
 
 .coin-text {
     color: white;
-    font-size: clamp(2rem, 30px, 3rem);
+    font-size: clamp(1.5rem, 25px, 2rem);
     animation: coinAlert 1s ease-in-out infinite;
 }
 
@@ -71,6 +72,7 @@ h3 {
 
 // alert class
 .show {
+
     animation: coinAlert 0.5s infinite ease-in-out;
 }
 

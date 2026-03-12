@@ -34,13 +34,17 @@ let testo = titoloH2.textContent;
 function incremento(){
     contatore++;
     tagContatore.textContent = contatore;
+    tagContatore.textContent = contatore;
+    if (tagContatore.textContent > 15) {
+        titoloH2.classList.add("show")
+    }
 }
 
 function decremento(){
     contatore--;
     tagContatore.textContent = contatore;
-    if (tagContatore.textContent > 15) {
-        titoloH2.classList.toggle("show")
-}
+    if (tagContatore.textContent < 15) {
+        titoloH2.classList.remove("show")
+    }
 }
 
