@@ -5,57 +5,77 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 22px;
+    flex-direction: column;
+    padding: 16px 16px;
+    width: 100%;
+    word-wrap: break-word;
+
+    h2 {
+        color: variables.$coloreVerde;
+    }
+
     h1 {
-        color: blue;
-        font-size: 22px;
+        // border: 1px solid red;
+        padding: 10px 0 0 0;
+        margin: 0;
+        color: variables.$coloreNero;
+        font-size: clamp(3.2rem, 2.5dvw, 4rem);
+        text-align: center;
+        word-break: break-all;
+        color: variables.$coloreVerde;
     }
     #dark-mode {
-        width: 25%;
+        text-align: right;
+        // border: 1px solid red;
+        width: 29%;
         font-size: 12px;
+        margin-top: 5px;
     }
 }
 
-// HERO SECTION ************
-#box-main {
-    padding: 35px;
-    // border: 0.5px solid black;
-    border-radius: 15px;
-    height: 450px;
-    width: 100%;
-    box-shadow: 5px 5px 10px lightgray;
-    background-color: #c6b2a9;
-}
 
+// HERO SECTION ************
 // sezione dedicata al contatore e la sua interazione
 #hero-section {
+    border: 1px solid yellow;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 1200px;
-    padding: 22px;
-    height: 70vh;
+    max-width: 700px;
+    padding: 22px 22px 0 22px;
+    height: 100vh;
     width: 100%;
     border: 1px solid black;
 
+    #box-main {
+        padding: 35px 35px 35px 35px;
+        border: 0.5px variables.$coloreVerde;
+        border-style: dashed;
+        border-radius: 0px;
+        height: auto;
+        width: 100%;
+        // box-shadow: 5px 5px 10px lightgray;
+    }
+
     .title-counter {
         width: 100%;
-        padding: 10px;
+        padding: 0px 0 10px 0;
         // border: 1px solid blue;
-        font-size: clamp(1rem, 3dvw, 2rem);
+        font-size: clamp(0.2rem, 14px, 1rem);
         text-align: center;
+        color: variables.$coloreVerde;
     }
 
     .box-contatore {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    border: 1px solid rgb(75, 109, 70);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border: 1px solid variables.$coloreVerde;
 
         .round {
             position: absolute;
@@ -64,20 +84,21 @@
             border-radius: 50%;
             background-color: white;
         }
-        .uno { top: 5px; left: 5px; background-color: brown; z-index: 1000;}
-        .due { top: 5px; right: 5px; background-color: brown; z-index: 1000;}
-        .tre { bottom: 5px; left: 5px; background-color: brown; z-index: 1000;}
-        .quattro { bottom: 5px; right: 5px; background-color: brown; z-index: 1000;}
+        .uno { top: 5px; left: 5px; background-color: variables.$coloreVerde;}
+        .due { top: 5px; right: 5px; background-color: variables.$coloreVerde;}
+        .tre { bottom: 5px; left: 5px; background-color: variables.$coloreVerde;}
+        .quattro { bottom: 5px; right: 5px; background-color: variables.$coloreVerde;}
 
         .box-numero {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: rgb(75, 109, 70);
+            background-color: rgb(52, 70, 50);
             height: 200px;
             width: 100%;
-            color: rgb(42, 41, 41);
-            font-size: clamp(5rem, 55px, 6rem);
+            color: variables.$coloreVerde;
+            font-size: clamp(5.2rem, 59px, 6.2rem);
+            border: 1px solid black;
         }
     }
 
@@ -87,23 +108,62 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding: 20px 0 0 0;
+        padding: 10px 0 0 0;
         gap: 10px;
     }
 
     .nointiendo {
         display: block;
-        color: #706a68;
+        color: variables.$coloreVerde;
         padding-top: 10px;
         font-size: 10px;
     }
 
+    .code {
+        color: variables.$coloreVerde;
+        font-size: clamp(0.8rem, 1dvw, 2rem);
+        padding-bottom: 16px;
+    }
+}
+// fine hero section
 
 
+// SECTION INFO
+.info {
+        width: 100%;
+        border: 1px solid rgb(39, 9, 121);
+        margin: 0;
+        padding: 0px 0 0 0;
+        text-align: left;
+        // padding: 0 32px 0 32px;
 
+        .info-space {
+            padding-top: 0px;
+        }
 
+        .lista-score {
+            list-style: none;
+            padding: 0px 0 10px 0;
+
+            li{
+                padding: 10px 0 10px 0;
+            }
+        }
 }
 
+
+// CLASSI PER VERSIONE DARK
+.dark-theme {
+    background-color: variables.$coloreNero;
+    color: white !important;
+}
+.dark-theme h1 {
+    color: white !important;
+}
+
+.dark-display {
+    background-color: rgb(152, 178, 22) !important;
+}
 
 
 @media (min-width: 769px) {

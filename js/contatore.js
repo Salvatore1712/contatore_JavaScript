@@ -1,23 +1,4 @@
-/*
-In questo progetto svilupperai una semplice applicazione web che simula il comportamento di un counter (contatore).
-🎯 Realizza un'applicazione in JavaScript che permetta all’utente di aumentare o diminuire il valore di un counter attraverso due pulsanti, + e −.
 
-Vediamo il funzionamento atteso del counter:
-Quando l’utente accede alla pagina, deve visualizzare il valore iniziale del counter impostato a 0.
-Devono essere presenti due pulsanti, uno per incrementare (+) e uno per decrementare (−) il valore del counter.
-Dopo aver creato dinamicamente gli elementi dell’interfaccia, implementa la funzione che aggiungerà e diminuirà il valore del counter.
-
-Requisiti tecnici
-L’applicazione deve soddisfare i seguenti requisiti:
-
-L’applicazione deve essere sviluppata esclusivamente in JavaScript puro.
-L’interfaccia del counter (pulsanti +/- e visualizzazione del valore) deve essere creata dinamicamente tramite JavaScript,
-utilizzando la manipolazione del DOM.
-
-È consentito l’utilizzo di librerie JavaScript esterne, solo se necessarie.
-Se lo desideri, puoi aggiungere funzionalità aggiuntive che ritieni utili o interessanti (per esempio, salvataggio del valore, 
-personalizzazione del contatore, ecc.).
-*/
 
 
 
@@ -27,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // counter variabile
     let counter = 0;
+    let scoreUser = 0;
+    const punteggi = {
+        Score: [1, counter]
+    }
 
     // seleziona gli elementi
     const tagContatore = document.querySelector(".contatore"); //contenitore del numero
@@ -72,8 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    btnIncrease.addEventListener("click", incremento);
-    btnDecrease.addEventListener("click", decremento);
+    // funzione reset che ritorna il contatore a zero
+    function reset() {
+        counter = 0;
+        tagContatore.textContent = counter;
+    }
+
+    btnIncrease.addEventListener("click", incremento); // + contatore
+    btnDecrease.addEventListener("click", decremento); // - contatore
+    btnReset.addEventListener("click", reset); //reset contatore
+
+    let totalScore = localStorage;
+    console.log(totalScore);
+    
 
 
 }) 

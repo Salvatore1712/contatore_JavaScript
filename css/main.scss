@@ -19,7 +19,10 @@
     box-sizing: border-box;
 }
 body {
+    // background-image: url(../img/pexels-nicole-avagliano-1132392-2312040.jpg);
     font-family: variables.$fontFamily;
+    height: 100dvh;
+    background-color: variables.$coloreNero;
 }
 
 #container-grid {
@@ -27,10 +30,12 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0;
-    border: 1px solid red;
+    height: 100%;
 }
 
 .grid-item {
-    border: 1px solid red;
+    // border: 1px solid red;
 }
+
+
 

@@ -3,43 +3,57 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 22px;
+  flex-direction: column;
+  padding: 16px 16px;
+  width: 100%;
+  word-wrap: break-word;
+}
+#header h2 {
+  color: #1FE211;
 }
 #header h1 {
-  color: blue;
-  font-size: 22px;
+  padding: 10px 0 0 0;
+  margin: 0;
+  color: #000;
+  font-size: clamp(3.2rem, 2.5dvw, 4rem);
+  text-align: center;
+  word-break: break-all;
+  color: #1FE211;
 }
 #header #dark-mode {
-  width: 25%;
+  text-align: right;
+  width: 29%;
   font-size: 12px;
-}
-
-#box-main {
-  padding: 35px;
-  border-radius: 15px;
-  height: 450px;
-  width: 100%;
-  box-shadow: 5px 5px 10px lightgray;
-  background-color: #c6b2a9;
+  margin-top: 5px;
 }
 
 #hero-section {
+  border: 1px solid yellow;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 1200px;
-  padding: 22px;
-  height: 70vh;
+  max-width: 700px;
+  padding: 22px 22px 0 22px;
+  height: 100vh;
   width: 100%;
   border: 1px solid black;
 }
+#hero-section #box-main {
+  padding: 35px 35px 35px 35px;
+  border: 0.5px #1FE211;
+  border-style: dashed;
+  border-radius: 0px;
+  height: auto;
+  width: 100%;
+}
 #hero-section .title-counter {
   width: 100%;
-  padding: 10px;
-  font-size: clamp(1rem, 3dvw, 2rem);
+  padding: 0px 0 10px 0;
+  font-size: clamp(0.2rem, 14px, 1rem);
   text-align: center;
+  color: #1FE211;
 }
 #hero-section .box-contatore {
   position: relative;
@@ -48,7 +62,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid rgb(75, 109, 70);
+  border: 1px solid #1FE211;
 }
 #hero-section .box-contatore .round {
   position: absolute;
@@ -60,50 +74,83 @@
 #hero-section .box-contatore .uno {
   top: 5px;
   left: 5px;
-  background-color: brown;
-  z-index: 1000;
+  background-color: #1FE211;
 }
 #hero-section .box-contatore .due {
   top: 5px;
   right: 5px;
-  background-color: brown;
-  z-index: 1000;
+  background-color: #1FE211;
 }
 #hero-section .box-contatore .tre {
   bottom: 5px;
   left: 5px;
-  background-color: brown;
-  z-index: 1000;
+  background-color: #1FE211;
 }
 #hero-section .box-contatore .quattro {
   bottom: 5px;
   right: 5px;
-  background-color: brown;
-  z-index: 1000;
+  background-color: #1FE211;
 }
 #hero-section .box-contatore .box-numero {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(75, 109, 70);
+  background-color: rgb(52, 70, 50);
   height: 200px;
   width: 100%;
-  color: rgb(42, 41, 41);
-  font-size: clamp(5rem, 55px, 6rem);
+  color: #1FE211;
+  font-size: clamp(5.2rem, 59px, 6.2rem);
+  border: 1px solid black;
 }
 #hero-section .box-button {
   margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 20px 0 0 0;
+  padding: 10px 0 0 0;
   gap: 10px;
 }
 #hero-section .nointiendo {
   display: block;
-  color: #706a68;
+  color: #1FE211;
   padding-top: 10px;
   font-size: 10px;
+}
+#hero-section .code {
+  color: #1FE211;
+  font-size: clamp(0.8rem, 1dvw, 2rem);
+  padding-bottom: 16px;
+}
+
+.info {
+  width: 100%;
+  border: 1px solid rgb(39, 9, 121);
+  margin: 0;
+  padding: 0px 0 0 0;
+  text-align: left;
+}
+.info .info-space {
+  padding-top: 0px;
+}
+.info .lista-score {
+  list-style: none;
+  padding: 0px 0 10px 0;
+}
+.info .lista-score li {
+  padding: 10px 0 10px 0;
+}
+
+.dark-theme {
+  background-color: #000;
+  color: white !important;
+}
+
+.dark-theme h1 {
+  color: white !important;
+}
+
+.dark-display {
+  background-color: rgb(152, 178, 22) !important;
 }
 
 .btn {
@@ -112,12 +159,11 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  background: linear-gradient(#F35050, #FF0000);
-  color: white;
+  background: #1FE211;
+  color: #000;
   border: none;
-  border-radius: 50%;
-  font-size: 22px;
-  border: 1px solid red;
+  border-radius: 0;
+  font-size: 35px;
   cursor: pointer;
 }
 
@@ -127,16 +173,23 @@
   max-width: 100px;
   height: 30px;
   border: 1px solid grey;
-  background: linear-gradient(rgb(169, 168, 168), rgb(61, 56, 56));
+  background: rgb(169, 168, 168);
   cursor: pointer;
 }
 
 .btn:hover {
-  background: linear-gradient(#FF0000, #F35050);
+  background: #17b70b;
 }
 
 .reset:hover {
   background: linear-gradient(rgb(86, 86, 86), rgb(41, 37, 37));
+}
+
+.dark-button {
+  width: 70px;
+  border-radius: 0;
+  border: none;
+  background-color: #1FE211;
 }
 
 * {
@@ -147,6 +200,8 @@
 
 body {
   font-family: "Press Start 2P", system-ui;
+  height: 100dvh;
+  background-color: #000;
 }
 
 #container-grid {
@@ -154,9 +209,5 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0;
-  border: 1px solid red;
-}
-
-.grid-item {
-  border: 1px solid red;
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */

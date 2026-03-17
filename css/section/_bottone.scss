@@ -8,12 +8,11 @@
     justify-content: center;
     width: 60px;
     height: 60px;
-    background:linear-gradient(variables.$lightRed, variables.$darkRed);
-    color: white;
+    background: variables.$coloreVerde;
+    color: variables.$coloreNero;
     border: none;
-    border-radius: 50%;
-    font-size: 22px;
-    border: 1px solid red;
+    border-radius: 0;
+    font-size: 35px;
     cursor: pointer;
 }
 
@@ -25,16 +24,23 @@
     max-width: 100px;
     height: 30px;
     border: 1px solid grey;
-    background: linear-gradient(rgb(169, 168, 168), rgb(61, 56, 56));
+    background: rgb(169, 168, 168);
     cursor: pointer;
 }
 
 
 // hover button
 .btn:hover {
-    background:linear-gradient(variables.$darkRed, variables.$lightRed);
+    background: variables.$coloreVerdeScuro;
 }
 
 .reset:hover {
     background: linear-gradient(rgb(86, 86, 86), rgb(41, 37, 37));
+}
+
+.dark-button {
+    width: 70px;
+    border-radius:0;
+    border: none;
+    background-color: variables.$coloreVerde;
 }
