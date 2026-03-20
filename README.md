@@ -2,100 +2,81 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/JavaScript-Vanilla-1FE211?style=for-the-badge&labelColor=000000" alt="JavaScript Vanilla">
-  <img src="https://img.shields.io/badge/Style-Retro%2080s-1FE211?style=for-the-badge&labelColor=000000" alt="Retro 80s">
-  <img src="https://img.shields.io/badge/Theme-Duotone-FF0004?style=for-the-badge&labelColor=000000" alt="Duotone theme">
+  <img src="https://img.shields.io/badge/SCSS-Retro%20UI-1FE211?style=for-the-badge&labelColor=000000" alt="Retro UI">
+  <img src="https://img.shields.io/badge/Theme-80s%20Computer-FF0004?style=for-the-badge&labelColor=000000" alt="80s Computer theme">
 </p>
 
 <p align="center">
-  Un progetto front-end in <strong>JavaScript puro</strong> che realizza un contatore interattivo
-  con un'estetica da <strong>computer anni '80</strong>: schermo nero, verde fosforo, dettagli rossi,
-  tipografia arcade e interfaccia da terminale vintage.
+  Un progetto front-end in <strong>JavaScript puro</strong> che sviluppa un contatore con una forte identità visiva:
+  monitor nero, verde fosforo, dettagli rossi, tipografia arcade e atmosfera da vecchio computer anni '80.
 </p>
 
 ---
 
-## Anteprima
+## Screenshot
 
 <p align="center">
-  <img src="./img/landscape-illustration.jpg" alt="Illustrazione retro del progetto" width="100%">
+  <img src="./img/readme-preview.svg" alt="Preview del progetto JS Counter.exe" width="100%">
 </p>
 
-<p align="center">
-  <img src="./img/landscape-illustration_little.jpg" alt="Dettaglio visual retro" width="48%">
-  <img src="./img/pexels-nicole-avagliano-1132392-2312040.jpg" alt="Moodboard retro del progetto" width="48%">
-</p>
+> Preview illustrativa del layout e dello stile del progetto in chiave CRT / rétro computer.
 
 ---
 
-## Descrizione
+## Panoramica
 
-`JS COUNTER.exe` e' una piccola applicazione web che simula il comportamento di un contatore numerico.
-L'utente puo' incrementare, decrementare e resettare il valore mostrato a schermo attraverso pulsanti creati e gestiti in JavaScript.
+Il progetto nasce da un brief semplice e chiaro: realizzare un'applicazione che simuli il comportamento di un counter.
 
-Il progetto nasce come esercitazione su:
+Dal file `progetto.txt` emergono questi punti fondamentali:
 
-- manipolazione del DOM
-- gestione eventi
-- organizzazione dei file front-end
-- separazione tra struttura HTML, stile SCSS/CSS e logica JavaScript
-- costruzione di una UI con identita' visiva forte
+- visualizzare il valore iniziale del counter impostato a `0`
+- aumentare e diminuire il valore tramite pulsanti dedicati
+- sviluppare tutto in `JavaScript vanilla`
+- creare dinamicamente l'interfaccia del counter tramite manipolazione del DOM
+- mantenere una struttura ordinata tra HTML, CSS/SCSS e JavaScript
 
----
-
-## Obiettivo del progetto
-
-Il requisito principale era sviluppare una semplice applicazione counter che:
-
-- mostri inizialmente il valore `0`
-- permetta di aumentare il valore tramite un pulsante
-- permetta di diminuire il valore tramite un pulsante
-- costruisca l'interfaccia interattiva usando JavaScript
-- utilizzi esclusivamente JavaScript vanilla, senza framework
-
-Oltre ai requisiti base, il progetto aggiunge una direzione stilistica precisa: una dashboard in stile vecchio terminale / monitor CRT.
+Oltre alla logica base, il progetto porta il concept in una direzione estetica precisa: un piccolo software rétro con look da terminale e dashboard arcade.
 
 ---
 
-## Caratteristiche principali
+## Obiettivi
 
-- Counter sviluppato in JavaScript puro
-- Creazione e gestione dei pulsanti tramite DOM
-- Reset del valore corrente
-- Blocco del decremento sotto lo zero
-- Interfaccia a tema rétro anni '80
-- Layout responsive con struttura mobile e desktop
-- SCSS organizzato in partials
-- Palette a due colori con accento rosso per le azioni critiche
+- costruire un counter interattivo
+- gestire eventi `click` sui controlli
+- aggiornare il valore mostrato a schermo
+- impedire che il contatore scenda sotto zero
+- definire un'identità grafica riconoscibile
+- organizzare lo stile con SCSS modularizzato
 
 ---
 
-## Stack utilizzato
+## Stack
 
 ```txt
 HTML5
 SCSS
 CSS3
 JavaScript Vanilla
-Google Fonts:
+Google Fonts
 - Press Start 2P
 - Share Tech Mono
 ```
 
 ---
 
-## Mood visivo
+## Stile del progetto
 
-Il progetto punta su una UI fortemente riconoscibile:
+L'interfaccia è pensata come se fosse il pannello di un vecchio computer:
 
 - sfondo nero `#000000`
 - verde fosforo `#1FE211`
 - rosso acceso `#FF0004`
-- font display `Press Start 2P`
+- font principale `Press Start 2P`
 - font secondario `Share Tech Mono`
 - effetti di lampeggiamento
-- box con bordi luminosi e look da vecchio hardware
+- box con bordi neon e impaginazione da terminale
 
-Snippet delle variabili SCSS:
+Snippet delle variabili:
 
 ```scss
 $coloreNero: #000;
@@ -125,72 +106,81 @@ $fontFamilyText: "Share Tech Mono", monospace;
 │       ├── _button.scss
 │       └── _homePage.scss
 ├── js
-│   └── contatore.js
+│   ├── contatore.js
+│   └── menuResponsive.js
 └── img
-    ├── landscape-illustration.jpg
-    ├── landscape-illustration_little.jpg
-    └── pexels-nicole-avagliano-1132392-2312040.jpg
+    └── readme-preview.svg
 ```
 
 ---
 
-## Come avviare il progetto
+## Avvio del progetto
 
 Puoi aprire direttamente `index.html` nel browser.
 
-Se preferisci usare un piccolo server locale:
+Se preferisci un server locale:
 
 ```bash
 npx serve
 ```
 
-Oppure puoi lanciare il progetto con estensioni come `Live Server` in VS Code.
+In alternativa puoi usare `Live Server` da VS Code.
 
 ---
 
-## Struttura HTML
+## Struttura dell'interfaccia
 
-La pagina e' organizzata come una piccola interfaccia software rétro:
+La pagina è organizzata come una mini dashboard software:
 
-- `header` con titolo e menu
+- `header` con titolo, versione e menu
 - `aside` laterale
-- `main` con modulo counter
-- `sidebar` con area score
+- `main` con il modulo counter
+- `sidebar` con score panel
 - `footer` finale
 
-Estratto da `index.html`:
+Snippet HTML:
 
 ```html
-<main id="main" class="grid-item">
-  <div id="title-main">
-    <h4>COUNTER MODULE_ </h4>
-    <h6>root/project/destroy</h6>
-  </div>
+<header id="header" class="grid-item">
+  <h1>JS COUNTER.exe</h1>
+  <span>v_1.2</span>
+  <nav id="nav-bar">
+    <span class="icon-menu">MENU</span>
+    <ul class="menu-lista menu-show">
+      <li><a href="">conatatore</a></li>
+      <li><a href="">cronometro</a></li>
+      <li><a href="">pari dispari</a></li>
+    </ul>
+  </nav>
+</header>
+```
 
-  <div class="box-contatore">
-    <div id="numero">001</div>
-    <span>+++++++++++++++++++++++</span>
-    <div class="box-button">
-      <button class="btn reset">RESET</button>
-      <button class="btn">DECR</button>
-      <button class="btn">INCR</button>
-    </div>
+Snippet del modulo centrale:
+
+```html
+<div class="box-contatore">
+  <div id="numero">001</div>
+  <span>+++++++++++++++++++++++</span>
+  <div class="box-button">
+    <button class="btn reset">RESET</button>
+    <button class="btn">DECR</button>
+    <button class="btn">INCR</button>
   </div>
-</main>
+</div>
 ```
 
 ---
 
-## Logica JavaScript
+## Logica del counter
 
-La logica del contatore e' gestita nel file `js/contatore.js`.
-Il flusso e' semplice e chiaro:
+La logica del contatore è contenuta nel file `js/contatore.js`.
+L'idea implementativa segue il brief originale:
 
-1. il contatore parte da `0`
-2. vengono selezionati gli elementi utili del DOM
-3. vengono creati i pulsanti
-4. i pulsanti vengono inseriti nell'interfaccia
-5. agli eventi `click` vengono associate le funzioni di incremento, decremento e reset
+1. inizializzare il valore del counter
+2. selezionare i nodi del DOM
+3. creare i pulsanti dinamicamente
+4. aggiornare il numero sul display
+5. collegare le funzioni di incremento, decremento e reset
 
 ### Inizializzazione
 
@@ -207,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-### Creazione pulsanti
+### Creazione dei controlli
 
 ```js
 btnReset.textContent = "RESET";
@@ -230,18 +220,14 @@ boxButton.appendChild(btnDecrease);
 boxButton.appendChild(btnIncrease);
 ```
 
-### Funzione di incremento
+### Incremento e decremento
 
 ```js
 function incremento () {
     counter++;
     tagContatore.textContent = counter;
 }
-```
 
-### Funzione di decremento con blocco a zero
-
-```js
 function decremento() {
     counter--;
     tagContatore.textContent = counter;
@@ -253,7 +239,7 @@ function decremento() {
 }
 ```
 
-### Funzione reset
+### Reset
 
 ```js
 function reset() {
@@ -262,7 +248,7 @@ function reset() {
 }
 ```
 
-### Binding degli eventi
+### Event listeners
 
 ```js
 btnIncrease.addEventListener("click", incremento);
@@ -270,38 +256,52 @@ btnDecrease.addEventListener("click", decremento);
 btnReset.addEventListener("click", reset);
 ```
 
----
-
-## Logica funzionale del counter
-
-Il comportamento del contatore e' questo:
-
-- click su `INCR` o `+`: il numero aumenta di `1`
-- click su `DECR` o `-`: il numero diminuisce di `1`
-- il numero non puo' diventare negativo
-- click su `RESET`: il valore torna a `0`
-
-In termini pratici:
+### Logica funzionale in breve
 
 ```txt
-0 -> 1 -> 2 -> 3
-3 -> 2 -> 1 -> 0
-0 -> non scende sotto 0
-RESET -> 0
+START  -> 0
+INCR   -> +1
+DECR   -> -1
+MIN    -> 0
+RESET  -> 0
 ```
 
 ---
 
-## Stile e componenti
+## Menu responsive
 
-La parte visiva e' gestita tramite SCSS suddiviso in moduli:
+Nel progetto è presente anche un piccolo script per gestire il menu mobile.
+Il file `js/menuResponsive.js` mostra o nasconde la lista al click su `MENU`.
 
-- `_variables.scss` contiene palette e font
-- `_homePage.scss` contiene layout e sezioni principali
-- `_button.scss` contiene lo stile dei pulsanti
-- `main.scss` importa e organizza tutto
+Snippet:
 
-Snippet pulsanti:
+```js
+const menuBtn = document.querySelector(".icon-menu");
+let listaUl = document.querySelector(".menu-lista");
+
+menuBtn.addEventListener("click", () => {
+    if (listaUl.classList.contains("menu-show")) {
+        listaUl.classList.remove("menu-show");
+    } else {
+        listaUl.classList.add("menu-show");
+    }
+});
+```
+
+La classe `menu-show` viene usata come stato per controllare la visibilità del blocco navigazione.
+
+---
+
+## Struttura SCSS
+
+Il CSS è organizzato in più livelli:
+
+- `_variables.scss` per colori e font
+- `_homePage.scss` per layout e sezioni principali
+- `_button.scss` per lo stile dei pulsanti
+- `main.scss` per importazioni globali, reset e media query
+
+Snippet dei pulsanti:
 
 ```scss
 .btn {
@@ -323,40 +323,12 @@ Snippet pulsanti:
 }
 ```
 
-Snippet layout principale:
-
-```scss
-#main {
-    border: 1px solid variables.$coloreVerde;
-    padding: 16px;
-    margin-top: 16px;
-}
-
-.box-contatore {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: 5px solid variables.$coloreVerde;
-    height: 300px;
-}
-```
-
----
-
-## Responsive design
-
-Il layout e' pensato per funzionare sia su mobile sia su schermi piu' larghi.
-
-- su mobile la struttura e' verticale
-- da `768px` in su il layout passa a griglia
-- l'interfaccia viene distribuita in `header`, `aside`, `main`, `sidebar`, `footer`
-
-Estratto:
+Snippet layout responsive:
 
 ```scss
 @media (min-width:768px) {
     #container-grid {
+        margin: 0 auto;
         max-width: 1000px;
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
@@ -372,41 +344,47 @@ Estratto:
 
 ## Requisiti del brief
 
-Il progetto segue i punti richiesti dal brief iniziale:
+Riprendendo `progetto.txt`, il progetto punta a soddisfare questi criteri:
 
-- applicazione realizzata in JavaScript puro
-- logica del counter implementata con funzioni dedicate
-- uso della manipolazione del DOM
-- struttura ordinata in cartelle `css`, `js`, `img`
-- presenza del file `README.md`
+- corretto funzionamento dei pulsanti di incremento e decremento
+- visualizzazione del valore del counter
+- uso di JavaScript puro senza framework
+- manipolazione del DOM
+- buona organizzazione del codice
+- corretta struttura del repository con `README.md`
 
-Il brief originale e' salvato anche nel file `progetto.txt`.
+Font indicati nel brief:
+
+```txt
+Press Start 2P -> titoli
+VT323          -> numeri
+Share Tech Mono -> testi secondari
+```
 
 ---
 
-## Nota tecnica
+## Stato attuale
 
-Nello stato attuale del repository c'e' un disallineamento tra alcuni selettori HTML e la logica JavaScript:
+Il repository mostra chiaramente la direzione del progetto, ma ci sono ancora alcuni punti da rifinire per allineare completamente interfaccia e logica:
 
-- `contatore.js` cerca l'elemento `.contatore`
-- nell'`index.html` attuale il display visibile e' `#numero`
-- in `index.html` sono referenziati anche `darkLightMode.js` e `score_info.js`, ma questi file non risultano presenti nel workspace attuale
+- `index.html` carica al momento `menuResponsive.js`
+- `contatore.js` è presente nel progetto ma non è incluso nella pagina attuale
+- nel file JavaScript del counter viene cercato `.contatore`, mentre nell'HTML attuale il display mostrato è `#numero`
+- il layout e il concept grafico sono già ben definiti, mentre la parte finale di integrazione logica è ancora da consolidare
 
-Questo README documenta sia l'idea progettuale sia la logica gia' presente nel file JavaScript principale. Per una versione finale perfettamente coerente conviene riallineare markup e script.
+Questo README documenta sia il brief sia la logica prevista e già scritta nel repository.
 
 ---
 
 ## Possibili miglioramenti
 
-Il progetto puo' essere esteso in diversi modi:
-
-- salvataggio del counter in `localStorage`
-- aggiunta di un vero cronometro
-- sezione record score dinamica
-- menu interattivo
-- animazioni CRT piu' avanzate
-- effetti sonori rétro
-- toggle tema light/dark completo
+- collegare il file `contatore.js` alla pagina attuale
+- unificare i selettori tra HTML e JavaScript
+- aggiungere `localStorage` per salvare il valore
+- rendere dinamici score e record
+- introdurre una vera sezione cronometro
+- usare `VT323` per il display numerico
+- aggiungere un effetto scanline CRT
 
 ---
 

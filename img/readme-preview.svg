@@ -1,0 +1,39 @@
+<svg width="1400" height="820" viewBox="0 0 1400 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="820" fill="#050505"/>
+  <rect x="28" y="28" width="1344" height="764" rx="14" fill="#0A0A0A" stroke="#1FE211" stroke-width="4"/>
+  <rect x="60" y="60" width="1280" height="84" rx="8" fill="#101010" stroke="#1FE211" stroke-width="2"/>
+  <text x="92" y="108" fill="#1FE211" font-family="monospace" font-size="34" font-weight="700">JS COUNTER.exe</text>
+  <text x="1120" y="108" fill="#1FE211" font-family="monospace" font-size="24">v_1.2</text>
+
+  <rect x="60" y="168" width="250" height="500" rx="8" fill="#090909" stroke="#1FE211" stroke-width="2"/>
+  <text x="92" y="220" fill="#1FE211" font-family="monospace" font-size="24">SIDE PANEL</text>
+  <text x="92" y="270" fill="#1FE211" font-family="monospace" font-size="18">SYSTEM CHECK .... OK</text>
+  <text x="92" y="305" fill="#1FE211" font-family="monospace" font-size="18">CORE TEMP ..... 36C</text>
+  <text x="92" y="340" fill="#1FE211" font-family="monospace" font-size="18">MEMORY ........ 128KB</text>
+
+  <rect x="340" y="168" width="720" height="500" rx="8" fill="#090909" stroke="#1FE211" stroke-width="2"/>
+  <text x="380" y="220" fill="#1FE211" font-family="monospace" font-size="26">COUNTER MODULE_</text>
+  <text x="790" y="220" fill="#1FE211" font-family="monospace" font-size="20">root/project/destroy</text>
+  <rect x="404" y="266" width="592" height="262" rx="8" fill="#030303" stroke="#1FE211" stroke-width="7"/>
+  <text x="658" y="435" fill="#1FE211" font-family="monospace" font-size="148" font-weight="700">001</text>
+  <text x="483" y="560" fill="#1FE211" font-family="monospace" font-size="22">+++++++++++++++++++++++</text>
+
+  <rect x="420" y="592" width="136" height="44" rx="5" fill="#0A0A0A" stroke="#FF0004" stroke-width="3"/>
+  <rect x="576" y="592" width="136" height="44" rx="5" fill="#0A0A0A" stroke="#1FE211" stroke-width="3"/>
+  <rect x="732" y="592" width="136" height="44" rx="5" fill="#0A0A0A" stroke="#1FE211" stroke-width="3"/>
+  <text x="446" y="621" fill="#FF0004" font-family="monospace" font-size="24">RESET</text>
+  <text x="611" y="621" fill="#1FE211" font-family="monospace" font-size="24">DECR</text>
+  <text x="768" y="621" fill="#1FE211" font-family="monospace" font-size="24">INCR</text>
+
+  <rect x="1090" y="168" width="250" height="500" rx="8" fill="#090909" stroke="#1FE211" stroke-width="2"/>
+  <text x="1122" y="220" fill="#1FE211" font-family="monospace" font-size="24">SCORE PANEL</text>
+  <text x="1122" y="280" fill="#1FE211" font-family="monospace" font-size="18">PLAYER_01....</text>
+  <text x="1270" y="280" fill="#FF0004" font-family="monospace" font-size="18">NOME</text>
+  <text x="1122" y="320" fill="#1FE211" font-family="monospace" font-size="18">YOUR_SCORE...</text>
+  <text x="1278" y="320" fill="#FF0004" font-family="monospace" font-size="18">100</text>
+  <text x="1122" y="360" fill="#1FE211" font-family="monospace" font-size="18">RECORD_SCORE.</text>
+  <text x="1278" y="360" fill="#FF0004" font-family="monospace" font-size="18">150</text>
+
+  <text x="533" y="720" fill="#1FE211" font-family="monospace" font-size="24">BOOT SEQUENCE START</text>
+  <text x="518" y="755" fill="#1FE211" font-family="monospace" font-size="24">MEMORY CHECK:___ OK</text>
+</svg>
