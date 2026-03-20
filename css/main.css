@@ -1,202 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 #header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  padding: 16px 16px;
+  grid-area: header;
   width: 100%;
-  word-wrap: break-word;
-}
-#header h2 {
-  color: #1FE211;
+  margin-top: 16px;
 }
 #header h1 {
-  padding: 10px 0 0 0;
-  margin: 0;
-  color: #000;
-  font-size: clamp(3.2rem, 2.5dvw, 4rem);
-  text-align: center;
-  word-break: break-all;
-  color: #1FE211;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 27px;
+  text-align: left;
+  line-height: 1.2em;
 }
-#header #dark-mode {
-  text-align: center;
+#header span {
   width: 100%;
-  font-size: 12px;
-  margin-top: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-top: dashed 1px #1FE211;
-  border-bottom: dashed 1px #1FE211;
-  color: #1FE211;
+  text-align: left;
+  font-size: 20px;
 }
-#header #dark-mode .press {
-  padding-bottom: 5px;
-  animation: impuls 1s ease-in-out infinite;
-}
-
-#hero-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 auto;
-  max-width: 700px;
-  padding: 22px 22px 0 22px;
-  height: 100vh;
-  width: 100%;
-}
-#hero-section #box-main {
-  padding: 35px 35px 35px 35px;
-  border: 0.5px #1FE211;
-  border-style: dashed;
-  border-radius: 0px;
-  height: auto;
-  width: 100%;
-}
-#hero-section .title-counter {
-  width: 100%;
-  padding: 0px 0 10px 0;
-  font-size: clamp(0.2rem, 14px, 1rem);
-  text-align: center;
-  color: #1FE211;
-}
-#hero-section .box-contatore {
+#header #nav-bar {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
-  border: 1px solid #1FE211;
-}
-#hero-section .box-contatore .round {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: white;
-}
-#hero-section .box-contatore .uno {
-  top: 5px;
-  left: 5px;
+  text-align: center;
   background-color: #1FE211;
+  margin-top: 8px;
 }
-#hero-section .box-contatore .due {
-  top: 5px;
-  right: 5px;
-  background-color: #1FE211;
-}
-#hero-section .box-contatore .tre {
-  bottom: 5px;
-  left: 5px;
-  background-color: #1FE211;
-}
-#hero-section .box-contatore .quattro {
-  bottom: 5px;
-  right: 5px;
-  background-color: #1FE211;
-}
-#hero-section .box-contatore .box-numero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(23, 29, 22);
-  height: 200px;
+#header #nav-bar span {
   width: 100%;
-  color: #1FE211;
-  font-size: clamp(5.2rem, 59px, 6.2rem);
-  border: 1px solid black;
+  color: #000;
 }
-#hero-section .box-button {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 10px 0 0 0;
-  gap: 10px;
-}
-#hero-section .nointiendo {
-  display: block;
-  color: #1FE211;
-  padding-top: 10px;
-  font-size: 10px;
-}
-#hero-section .code {
-  color: #1FE211;
-  font-size: clamp(0.8rem, 1dvw, 2rem);
-  padding-bottom: 16px;
-}
-
-.moltiplicatori {
-  padding: 35px;
-  width: 100%;
-  margin: 16px 0 0 0;
+#header #nav-bar .menu-lista {
+  position: relative;
+  display: none;
+  z-index: 1000;
   height: auto;
-  border: 1px solid #1FE211;
-  border-style: dashed;
-}
-.moltiplicatori h5 {
-  color: #1FE211;
-  font-size: 12px;
-  display: block;
-  text-align: center;
-}
-.moltiplicatori .box-btn-multi {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 16px;
-}
-.moltiplicatori .score-user {
-  color: #1FE211;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-}
-
-.info {
-  width: 100%;
-  margin: 0;
-  padding: 0px 0 0 0;
-  text-align: left;
-  color: #1FE211;
-}
-.info .coins {
-  text-align: center;
-  padding: 8px;
-  animation: impuls 1s ease-in-out infinite;
-}
-.info .lista-score {
   list-style: none;
-  padding: 0px 0 10px 0;
+  background-color: #1FE211;
 }
-.info .lista-score li {
-  padding: 10px 0 10px 0;
+#header #nav-bar .menu-lista li {
+  padding: 10px;
+  list-style: none;
 }
-
-footer {
-  text-align: center;
-  color: #1FE211;
-  padding: 16px;
-}
-
-.dark-theme {
-  background-color: #000;
-  color: white !important;
-}
-
-.dark-display {
-  background-color: rgb(152, 178, 22) !important;
+#header #nav-bar .menu-lista li a {
+  text-decoration: none;
   color: black;
 }
+#header #nav-bar .menu-lista li:hover {
+  background-color: #000;
+}
+#header #nav-bar .menu-lista li:hover a {
+  color: white;
+}
 
-@keyframes impuls {
+#aside {
+  display: none;
+  grid-area: "aside";
+  width: 100%;
+}
+
+#main {
+  border: 1px solid #1FE211;
+  padding: 16px;
+  margin-top: 16px;
+  grid-area: main;
+  width: 100%;
+  grid-template-columns: 2fr 1fr;
+  height: auto;
+}
+#main #title-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#main #title-main h4 {
+  animation: lampeggiamento 1s ease-in-out infinite;
+}
+#main .box-contatore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  height: 100px;
+  margin-top: 8px;
+  border: 5px solid #1FE211;
+  height: 300px;
+}
+#main .box-contatore #numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120px;
+  height: auto;
+}
+#main .box-contatore .box-button {
+  width: 100%;
+  height: 50px;
+  border: 1px solid yellow;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#main .random-text {
+  margin: 16px auto;
+  text-align: center;
+  width: 100%;
+}
+#main .random-text span {
+  animation: lampeggiamento 1s ease-in-out infinite;
+}
+
+#sidebar {
+  width: 100%;
+}
+
+#footer {
+  grid-area: footer;
+}
+
+@media (min-width: 768px) {
+  #header {
+    grid-area: header;
+    width: 100%;
+  }
+  #aside {
+    height: 80vh;
+    display: block;
+    grid-area: "aside";
+    width: 100%;
+  }
+  #main {
+    grid-area: main;
+    width: 100%;
+    grid-template-columns: 2fr 1fr;
+    height: 80vh;
+  }
+  #sidebar {
+    width: 100%;
+  }
+  #footer {
+    grid-area: footer;
+  }
+}
+@keyframes lampeggiamento {
   0% {
     opacity: 0;
   }
-  55% {
+  50% {
     opacity: 1;
   }
   100% {
@@ -207,71 +155,66 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: #1FE211;
-  color: #000;
-  border: none;
-  border-radius: 0;
-  font-size: 35px;
-  cursor: pointer;
+  width: 75px;
+  height: 30px;
+  border: 2px solid #1FE211;
+  background-color: #000;
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 0 5px 2px #1FE211;
 }
 
 .reset {
-  font-size: 12px;
-  border-radius: 0;
-  max-width: 100px;
-  height: 30px;
-  border: 1px solid grey;
-  background: rgb(169, 168, 168);
-  cursor: pointer;
+  border: 2px solid #FF0004;
+  box-shadow: 0 0 5px 2px #FF0004;
 }
 
-.btn:hover {
-  background: #17b70b;
-}
-
-.reset:hover {
-  background: linear-gradient(rgb(86, 86, 86), rgb(41, 37, 37));
-}
-
-.dark-button {
-  width: 70px;
-  border-radius: 0;
-  border: none;
-  background-color: #1FE211;
-}
-
-.btn-moltip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-  color: #1FE211;
-  font-size: 20px;
-  font-family: "Press Start 2P", system-ui;
-  border: 1.5px dashed #1FE211;
-  width: 75px;
-  height: 60px;
-  cursor: pointer;
-}
-
-* {
+*, *::after, *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Press Start 2P", system-ui;
-  height: 100dvh;
   background-color: #000;
+  color: #1FE211;
+  border: 1px solid yellow;
+  font-family: "Share Tech Mono", monospace;
 }
 
 #container-grid {
+  margin: 0 auto;
+  width: 95%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0;
-  height: 100%;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: #000;
+    color: #1FE211;
+    border: 1px solid yellow;
+  }
+  #container-grid {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "header header header" "aside main sidebar" "footer footer footer";
+    grid-template-rows: auto auto auto;
+  }
+  .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */

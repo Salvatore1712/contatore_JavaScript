@@ -1,41 +1,79 @@
-// import home page style
-@use "./section/homeStyle";
+// importazione variabili
+@use "./abstract/variables";
 
-// import button style
-@use "../css/section/bottone";
+// importazione home style
+@use "./section/homePage";
 
+// importo bottoni stile
+@use "./section/button";
 
-// variabili
-@use "../css/abstract/variables";
-
+// FONT SHARE TECH MONO
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 
-
-
-* {
+*, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    // background-image: url(../img/pexels-nicole-avagliano-1132392-2312040.jpg);
-    font-family: variables.$fontFamily;
-    height: 100dvh;
     background-color: variables.$coloreNero;
+    color: variables.$coloreVerde;
+    border: 1px solid yellow;
+    font-family: variables.$fontFamilyText;
 }
 
 #container-grid {
+    margin: 0 auto;
+    width: 95%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0;
-    height: 100%;
 }
 
 .grid-item {
+    display: flex;
+    flex-direction: column;
     // border: 1px solid red;
+    width: 100%;
 }
 
 
 
+
+
+
+
+
+
+
+
+// **** DESKTOP QUERY
+@media (min-width:768px) {
+    
+    body {
+        background-color: variables.$coloreNero;
+        color: variables.$coloreVerde;
+        border: 1px solid yellow;
+    }
+    #container-grid {
+        margin: 0 auto;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "aside main sidebar"
+            "footer footer footer";
+        grid-template-rows: auto auto auto;
+    }
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid red;
+        width: 100%;
+    }
+}

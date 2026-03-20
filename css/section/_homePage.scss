@@ -1,0 +1,180 @@
+// importazione variabili
+@use "../abstract/variables";
+
+
+// H E A D E R - - - - - 
+#header {
+    grid-area: header;
+    width: 100%;
+    margin-top: 16px;
+
+    h1 {
+        font-family: variables.$fontFamilyMain;
+        font-size: 27px;
+        text-align: left;
+        line-height: 1.2em;
+    }
+    span {
+        width: 100%;
+        text-align: left;
+        font-size: 20px;
+        }
+
+    // menu
+    #nav-bar {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        // border: 1px solid salmon;
+        background-color: variables.$coloreVerde;
+        margin-top: 8px;
+
+        span {
+            width: 100%;
+            color:  variables.$coloreNero;
+        }
+
+        .menu-lista {
+            position: relative;
+            display: none;
+            z-index: 1000;
+            height: auto;
+            list-style: none;
+            background-color: variables.$coloreVerde;
+
+            li {
+                padding: 10px;
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+            li:hover {
+                background-color: variables.$coloreNero;
+                
+                a{
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+// A S I D E - - - - - - 
+#aside {
+    display: none;
+    grid-area: "aside";
+    width: 100%;
+}
+
+// M A I N - - - - - -
+#main {
+    border: 1px solid variables.$coloreVerde;
+    padding: 16px;
+    margin-top: 16px;
+    grid-area: main;
+    width: 100%;
+    grid-template-columns: 2fr 1fr;
+    height: auto;
+
+    #title-main {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        h4{
+            animation: lampeggiamento 1s ease-in-out infinite;
+        }
+    }
+
+    .box-contatore {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        height: 100px;
+        margin-top: 8px;
+        border: 5px solid variables.$coloreVerde;
+        height: 300px;
+
+        #numero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            height: auto;
+        }
+        .box-button{
+            // bottoni
+            width: 100%;
+            height: 50px;
+            border: 1px solid yellow;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
+
+    .random-text {
+        margin: 16px auto;
+        text-align: center;
+        width: 100%;
+
+        span {
+            animation: lampeggiamento 1s ease-in-out infinite;
+        }
+    }
+}
+
+// S I D E B A R - - - - - 
+#sidebar {
+    width: 100%
+}
+
+#footer {
+    grid-area: footer;
+}
+
+
+
+
+// **** DESKTOP QUERY
+@media (min-width:768px) {
+        #header {
+        grid-area: header;
+        width: 100%;
+    }
+
+    #aside {
+        height: 80vh;
+        display: block;
+        grid-area: "aside";
+        width: 100%;
+    }
+
+    #main {
+        grid-area: main;
+        width: 100%;
+        grid-template-columns: 2fr 1fr;
+        height: 80vh;
+    }
+    #sidebar {
+        width: 100%
+    }
+
+    #footer {
+        grid-area: footer;
+    }
+}
+
+
+
+@keyframes lampeggiamento {
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
+    
+}
