@@ -127,14 +127,36 @@
             animation: lampeggiamento 1s ease-in-out infinite;
         }
     }
+
+    .coins {
+        animation: lampeggiamento 1s ease-in-out infinite;
+    }
 }
 
 // S I D E B A R - - - - - 
 #sidebar {
-    width: 100%
+    width: 100%;
+    border: 1px solid variables.$coloreVerde;
+    margin-top: 16px;
+    font-size: 18px;
+    padding: 16px;
+
+    li{
+        list-style-type: none;
+        padding-top: 10px;
+
+        span {
+            font-size: 22px;
+            color: variables.$coloreRosso;
+        }
+    }
 }
 
 #footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    border: 1px solid variables.$coloreVerde;
     grid-area: footer;
 }
 

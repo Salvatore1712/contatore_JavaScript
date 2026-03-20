@@ -107,12 +107,31 @@
 #main .random-text span {
   animation: lampeggiamento 1s ease-in-out infinite;
 }
+#main .coins {
+  animation: lampeggiamento 1s ease-in-out infinite;
+}
 
 #sidebar {
   width: 100%;
+  border: 1px solid #1FE211;
+  margin-top: 16px;
+  font-size: 18px;
+  padding: 16px;
+}
+#sidebar li {
+  list-style-type: none;
+  padding-top: 10px;
+}
+#sidebar li span {
+  font-size: 22px;
+  color: #FF0004;
 }
 
 #footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  border: 1px solid #1FE211;
   grid-area: footer;
 }
 
@@ -180,6 +199,7 @@ body {
   color: #1FE211;
   border: 1px solid yellow;
   font-family: "Share Tech Mono", monospace;
+  height: 100vh;
 }
 
 #container-grid {
