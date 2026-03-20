@@ -21,9 +21,10 @@
 body {
     background-color: variables.$coloreNero;
     color: variables.$coloreVerde;
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
     font-family: variables.$fontFamilyText;
     height: 100vh;
+    overflow: hidden;
 }
 
 #container-grid {
@@ -38,6 +39,11 @@ body {
     flex-direction: column;
     // border: 1px solid red;
     width: 100%;
+}
+
+.menu-show {
+    display: none;
+    position: absolute;
 }
 
 
