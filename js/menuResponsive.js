@@ -16,14 +16,29 @@ menuBtn.addEventListener("click", (event)=> {
 
 // selezione elementi e variabili giochi
 let counter = 0;
-let scoreUser = 0;
 const boxButton = document.querySelector(".box-button") //box che contiene i bottoni
 const boxContatore = document.querySelector("#numero") // box contenete num contatore
+let scoreText = document.querySelector("#info-score"); //span x punteggio
+let nameText = document.querySelector("#info-name"); // span per nome
+let bestScore = Number(localStorage.getItem("userScore")) || 0;
+
+function aggiornaScoreMassimo() {
+    if (counter > bestScore) {
+        bestScore = counter;
+        localStorage.setItem("userScore", bestScore);
+    }
+
+    scoreText.textContent = bestScore;
+}
 
 //CREAZIONE ELEMENTI BOTTONI
 const btnAumento = document.createElement("button");
 const btnDecremento = document.createElement("button");
 const btnReset = document.createElement("button");
+
+let nome = prompt("INSERISCI NOME");
+nameText.textContent = nome;
+scoreText.textContent = bestScore;
 
 //AGGIUNTA STILI BOTTONI
 btnAumento.className = "btn";
@@ -33,9 +48,12 @@ btnReset.className = "btn reset";
 // EVENTO SUL MENU SELEZIONA GIOCO IN BASE AL TESTO IN <LI>
 listaUl.addEventListener("click", event =>{
 
+
     // ******* GIOCO CONTATORE *********
     if(event.target.textContent === "contatore"){
+        
         boxContatore.textContent = counter //set testo conuter = 0
+        scoreText.textContent = bestScore;
 
         // testo per bottoni
         btnAumento.textContent = "INCR";
@@ -52,6 +70,7 @@ listaUl.addEventListener("click", event =>{
         function incremento() {
             counter++;
             boxContatore.textContent = counter;
+            aggiornaScoreMassimo();
         }
         btnAumento.addEventListener("click", incremento);
 
@@ -70,7 +89,7 @@ listaUl.addEventListener("click", event =>{
         btnReset.addEventListener("click", ()=>{
             counter = 0;
             boxContatore.textContent = counter;
-            scoreUser = localStorage(counter)
+            scoreText.textContent = bestScore;
         })
     
     }
