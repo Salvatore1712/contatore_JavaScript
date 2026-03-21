@@ -1,76 +1,59 @@
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
 
     // counter variabile
     let counter = 0;
     let scoreUser = 0;
-    const punteggi = {
-        Score: [1, counter]
-    }
 
     // seleziona gli elementi
-    const tagContatore = document.querySelector(".contatore"); //contenitore del numero
-    const boxButton = document.querySelector(".box-button");
+    const boxButton = document.querySelector(".box-button") //box che contiene i bottoni
+    const boxContatore = document.querySelector("#numero") // box contenete num contatore
+    boxContatore.textContent = counter
 
-    //creazione bottoni
-    const btnIncrease = document.createElement("button");
-    const btnDecrease = document.createElement("button");
-    const btnReset = document.createElement("button")
+    //CREAZIONE BOTTONI
+    const btnAumento = document.createElement("button");
+    const btnDecremento = document.createElement("button");
+    const btnReset = document.createElement("button");
 
-    //agginge classi e contenuto bottoni
-    btnReset.textContent = "RESET"; //tasto reset
+    btnAumento.textContent = "INCR";
+    btnDecremento.textContent = "DECR";
+    btnReset.textContent = "RESET";
+
+    //aggiunta stile bottoni
+    btnAumento.className = "btn";
+    btnDecremento.className = "btn";
     btnReset.className = "btn reset";
+    
+    //inserimento bottoni nel box
+    boxButton.append(btnReset);
+    boxButton.append(btnDecremento);
+    boxButton.append(btnAumento);
 
-    btnDecrease.textContent = "-" //bottone decremento
-    btnDecrease.className = "btn";
 
-    btnIncrease.textContent = "+";
-    btnIncrease.className = "btn";
-
-
-    //inserire bottoni nel DOM e contatore
-    tagContatore.textContent = counter;
-
-    boxButton.appendChild(btnReset);
-    boxButton.appendChild(btnDecrease);
-    boxButton.appendChild(btnIncrease);
-
-    // funzione incrementa
-    function incremento () {
-        counter++
-        tagContatore.textContent = counter;
-        // condizione if
+    //funzione incremento
+    function incremento() {
+        counter++;
+        boxContatore.textContent = counter;
     }
+    btnAumento.addEventListener("click", incremento);
 
-    //funzione decrementa
-    function decremento() {
-        counter --;
-        tagContatore.textContent = counter;
-        if (counter <=0) {
-            counter = 0;
-            tagContatore.textContent = counter
+
+    //funzione decremento nel listener con limite minimo 0
+    btnDecremento.addEventListener("click", function(){
+        if (counter == 0){
+            return;
         }
-    }
+        counter--;
+        boxContatore.textContent = counter;
+        
+    })
 
-    // funzione reset che ritorna il contatore a zero
-    function reset() {
-        scoreUser = localStorage
+    // FUNZIONE DI RESET
+    btnReset.addEventListener("click", ()=>{
         counter = 0;
-        tagContatore.textContent = counter;
-    }
-
-    btnIncrease.addEventListener("click", incremento); // + contatore
-    btnDecrease.addEventListener("click", decremento); // - contatore
-    btnReset.addEventListener("click", reset); //reset contatore
-
-    let totalScore = localStorage;
-    console.log(totalScore);
+        boxContatore.textContent = counter;
+    })
     
 
-
-}) 
+})

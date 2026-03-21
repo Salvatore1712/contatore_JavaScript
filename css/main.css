@@ -41,6 +41,7 @@
   padding: 10px;
   list-style: none;
   width: 100%;
+  color: black;
 }
 #header #nav-bar .menu-lista li a {
   text-decoration: none;
@@ -48,6 +49,7 @@
 }
 #header #nav-bar .menu-lista li:hover {
   background-color: #000;
+  color: white;
 }
 #header #nav-bar .menu-lista li:hover a {
   color: white;
