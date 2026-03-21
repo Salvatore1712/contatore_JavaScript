@@ -27,6 +27,7 @@
 #header #nav-bar span {
   width: 100%;
   color: #000;
+  animation: lampeggiamento 1s ease-in-out infinite;
 }
 #header #nav-bar .menu-lista {
   position: absolute;
@@ -74,9 +75,6 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-#main #title-main h4 {
-  animation: lampeggiamento 1s ease-in-out infinite;
 }
 #main .box-contatore {
   display: flex;
