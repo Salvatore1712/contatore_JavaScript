@@ -69,7 +69,7 @@
   grid-area: main;
   width: 100%;
   grid-template-columns: 2fr 1fr;
-  height: auto;
+  height: 500px;
 }
 #main #title-main {
   width: 100%;
@@ -110,10 +110,6 @@
 #main .random-text span {
   animation: lampeggiamento 1s ease-in-out infinite;
 }
-#main .coins {
-  animation: lampeggiamento 1s ease-in-out infinite;
-}
-
 #sidebar {
   width: 100%;
   border: 1px solid #1FE211;
@@ -136,13 +132,15 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-direction: column;
   color: black;
   grid-area: footer;
   width: 100%;
-  margin: 0 auto;
+  margin: 16px auto;
 }
 #footer a {
   text-decoration: underline;
+  padding: 5px;
   color: black;
 }
 
@@ -233,64 +231,63 @@
   #main .random-text span {
     animation: lampeggiamento 1s ease-in-out infinite;
   }
-  #main .coins {
-    animation: lampeggiamento 1s ease-in-out infinite;
-  }
-  #sidebar {
+  #main #sidebar {
     width: 100%;
   }
-  #footer {
+  #main #footer {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
     grid-area: footer;
   }
-  #footer a {
+  #main #footer a {
     text-decoration: underline;
     font-size: 20px;
     color: black;
   }
-}
-@keyframes lampeggiamento {
-  0% {
-    opacity: 0;
+  @keyframes lampeggiamento {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes interferenza {
-  0% {
-    opacity: 1;
-  }
-  .2% {
-    opacity: 0;
-  }
-  .4% {
-    opacity: 1;
-  }
-  .5% {
-    opacity: 0;
-  }
-  .6% {
-    opacity: 1;
-  }
-  .8% {
-    opacity: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  2% {
-    opacity: 0;
-  }
-  3% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
+  @keyframes interferenza {
+    0% {
+      opacity: 1;
+    }
+    .2% {
+      opacity: 0;
+    }
+    .4% {
+      opacity: 1;
+    }
+    .5% {
+      opacity: 0;
+    }
+    .6% {
+      opacity: 1;
+    }
+    .8% {
+      opacity: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    2% {
+      opacity: 0;
+    }
+    3% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 .btn {
@@ -321,7 +318,7 @@ body {
   background-color: #000;
   color: #1FE211;
   font-family: "Share Tech Mono", monospace;
-  height: 100vh;
+  height: 110vh;
   overflow: hidden;
 }
 
@@ -343,7 +340,7 @@ body {
   position: absolute;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   body {
     background-color: #000;
     color: #1FE211;

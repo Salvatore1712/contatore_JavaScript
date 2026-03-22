@@ -23,7 +23,7 @@ body {
     color: variables.$coloreVerde;
     // border: 1px solid yellow;
     font-family: variables.$fontFamilyText;
-    height: 100vh;
+    height: 110vh;
     overflow: hidden;
 }
 
@@ -52,7 +52,7 @@ body {
 
 
 // **** DESKTOP QUERY
-@media (min-width:768px) {
+@media (min-width:769px) {
     
     body {
         background-color: variables.$coloreNero;
