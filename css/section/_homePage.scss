@@ -179,6 +179,11 @@
         grid-area: header;
         width: 100%;
         text-align: center;
+        height: auto;
+
+        span{
+            text-align: center;
+        }
     }
 
     #aside {
@@ -187,6 +192,35 @@
         grid-area: "aside";
         width: 100%;
         margin-top: 16px;
+        padding: 16px;
+        border: 1px solid variables.$coloreVerde;
+
+        h4 {
+            font-size: 20px;
+        }
+
+        p{
+            padding: 8px;
+            line-height: 1.2rem;
+            letter-spacing: 0.2;
+            animation: interferenza 10s ease-out infinite;
+        }
+        ol {
+            padding-left: 32px;
+            width: 100%;
+
+            li {
+            box-sizing: border-box;
+            width: 100%;
+            text-align: left;
+
+            p{
+                box-sizing: border-box;
+                color: yellow;
+            }
+            }
+        }
+        
     }
 
     #main {
@@ -194,6 +228,53 @@
         width: 100%;
         grid-template-columns: 2fr 1fr;
         height: 80vh;
+        
+        .box-contatore {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px;
+            margin-top: 8px;
+            border: 5px solid variables.$coloreVerde;
+            height: 400px;
+            width: 100%;
+
+            #numero {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 120px;
+                height: auto;
+            }
+            .box-button{
+                // bottoni
+                width: 100%;
+                height: 50px;
+                border: 1px solid yellow;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                height: 80px;
+            }
+    }
+
+    .random-text {
+        font-size: 22px;
+        margin: 16px auto;
+        text-align: center;
+        width: 100%;
+
+        span {
+            animation: lampeggiamento 1s ease-in-out infinite;
+        }
+    }
+
+    .coins {
+        animation: lampeggiamento 1s ease-in-out infinite;
+    }
+
+
     }
     #sidebar {
         width: 100%
@@ -211,4 +292,17 @@
     50%{opacity: 1;}
     100%{opacity: 0;}
     
+}
+
+@keyframes interferenza {
+    0%{opacity: 1;}
+    .2%{opacity: 0;}
+    .4%{opacity: 1;}
+    .5%{opacity: 0;}
+    .6%{opacity: 1;}
+    .8%{opacity: 0;}
+    1%{opacity: 1;}
+    2%{opacity: 0;}
+    3%{opacity: 1;}
+    100%{opacity: 1;}
 }

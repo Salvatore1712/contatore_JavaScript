@@ -1,5 +1,5 @@
 // MENU TENDINA RESPONSIVE
-//selezione elementi
+//selezione elementi per menu
 const menuBtn = document.querySelector("#nav-bar")
 let listaUl = document.querySelector(".menu-lista");
 let iconMenu = document.querySelector(".icon-menu");
@@ -15,20 +15,29 @@ menuBtn.addEventListener("click", (event)=> {
 })
 
 // selezione elementi e variabili giochi
-let counter = 0;
+let counter = 0; //contatore
 const boxButton = document.querySelector(".box-button") //box che contiene i bottoni
 const boxContatore = document.querySelector("#numero") // box contenete num contatore
 let scoreText = document.querySelector("#info-score"); //span x punteggio
 let nameText = document.querySelector("#info-name"); // span per nome
+let cpuText = document.querySelector("#info-cpu"); // span per CPU SCORE
 
 //CREAZIONE ELEMENTI BOTTONI
 const btnAumento = document.createElement("button");
 const btnDecremento = document.createElement("button");
 const btnReset = document.createElement("button");
 
+//immissione nome player
 let nome = prompt("INSERISCI NOME");
 nameText.textContent = nome;
-scoreText.textContent = 0;
+
+//setta a zeo il punteggio user
+let scoreUser = 0;
+scoreText.textContent = scoreUser;
+
+//setta a zero il punteggio cpu
+let punteggioCPU = 0;
+cpuText.textContent = punteggioCPU;
 
 //AGGIUNTA STILI BOTTONI
 btnAumento.className = "btn";
@@ -37,8 +46,7 @@ btnReset.className = "btn reset";
 
 // EVENTO SUL MENU SELEZIONA GIOCO IN BASE AL TESTO IN <LI>
 listaUl.addEventListener("click", event =>{
-
-
+    
     // ******* GIOCO CONTATORE *********
     if(event.target.textContent === "contatore"){
         
@@ -77,7 +85,6 @@ listaUl.addEventListener("click", event =>{
         btnReset.addEventListener("click", ()=>{
             counter = 0;
             boxContatore.textContent = counter;
-            let scoreUser = localStorage.getItem("score", boxContatore.textContent)
             scoreText.textContent = scoreUser;
         })
     
@@ -107,11 +114,12 @@ listaUl.addEventListener("click", event =>{
 
     // **** PARI DISPARI ****
     else if(event.target.textContent === "pari dispari"){
+        
         boxContatore.textContent = " ";
         extraText.textContent = "select your button"
         // testo per bottoni
-        btnAumento.textContent = "PARI";
-        btnDecremento.textContent = "DISPARI";
+        btnAumento.textContent = "EVEN";
+        btnDecremento.textContent = "ODD";
         btnReset.textContent = "RESET";
 
         //inserimento bottoni nel box
@@ -122,29 +130,43 @@ listaUl.addEventListener("click", event =>{
         // scelta pari
         btnAumento.addEventListener("click", function(){
             let numeroCasuale = Math.floor(Math.random()* 20);
-            if(numeroCasuale % 2 == 0){
+            if(numeroCasuale % 2 == 0){ // vinci bottone pari
                 boxContatore.textContent = "WIN";
-                extraText.textContent = `Numero Random: ${numeroCasuale}`;
+                scoreUser++
+                scoreText.textContent = scoreUser;
+                extraText.textContent = `Random Number: ${numeroCasuale}`;
             } else {
                 boxContatore.textContent = "LOSE";
-                extraText.textContent = `Numero Random: ${numeroCasuale}`;
+                punteggioCPU++;
+                cpuText.textContent = punteggioCPU;
+                extraText.textContent = `Random Number: ${numeroCasuale}`;
             }
         })
 
         //scelta dispari
         btnDecremento.addEventListener("click", ()=>{
             let numeroCasuale = Math.floor(Math.random()* 20);
-            if(numeroCasuale % 2 == 0){
+            if(numeroCasuale % 2 == 0){ 
                 boxContatore.textContent = "LOSE";
+                punteggioCPU++;
+                cpuText.textContent = punteggioCPU;
                 extraText.textContent = `Numero Random: ${numeroCasuale}`;
-            } else {
+            } else { // vinci bottone dispari
                 boxContatore.textContent = "WIN";
+                scoreUser++;
+                scoreText.textContent = scoreUser;
                 extraText.textContent = `Numero Random: ${numeroCasuale}`;
             }
         })
 
         // reset button
         btnReset.addEventListener("click", ()=>{
+            //reset contatori
+            punteggioCPU = 0;
+            cpuText.textContent = punteggioCPU;
+            scoreUser = 0;
+            scoreText.textContent = scoreUser;
+
             boxContatore.textContent = " ";
             extraText.textContent = "select your button"
             // testo per bottoni
@@ -157,14 +179,19 @@ listaUl.addEventListener("click", event =>{
             boxButton.append(btnDecremento);
             boxButton.append(btnAumento);
 
+            
             // scelta pari
             btnAumento.addEventListener("click", function(){
                 let numeroCasuale = Math.floor(Math.random()* 20);
                 if(numeroCasuale % 2 == 0){
                     boxContatore.textContent = "WIN";
+                    scoreUser++
+                    scoreText.textContent = scoreUser;
                     extraText.textContent = `Numero Random: ${numeroCasuale}`;
                 } else {
                     boxContatore.textContent = "LOSE";
+                    punteggioCPU++;
+                    cpuText.textContent = punteggioCPU;
                     extraText.textContent = `Numero Random: ${numeroCasuale}`;
                 }
             })
@@ -174,9 +201,13 @@ listaUl.addEventListener("click", event =>{
                 let numeroCasuale = Math.floor(Math.random()* 20);
                 if(numeroCasuale % 2 == 0){
                     boxContatore.textContent = "LOSE";
+                    punteggioCPU++;
+                    cpuText.textContent = punteggioCPU;
                     extraText.textContent = `Numero Random: ${numeroCasuale}`;
                 } else {
                     boxContatore.textContent = "WIN";
+                    scoreUser++;
+                    scoreText.textContent = scoreUser;
                     extraText.textContent = `Numero Random: ${numeroCasuale}`;
                 }
             })
