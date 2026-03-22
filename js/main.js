@@ -78,6 +78,7 @@ listaUl.addEventListener("click", event =>{
             }
             counter--;
             boxContatore.textContent = counter;
+            cpuText.textContent = 0;
             
         })
 
@@ -85,7 +86,6 @@ listaUl.addEventListener("click", event =>{
         btnReset.addEventListener("click", ()=>{
             counter = 0;
             boxContatore.textContent = counter;
-            scoreText.textContent = scoreUser;
         })
     
     }

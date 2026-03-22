@@ -146,6 +146,10 @@
   color: black;
 }
 
+.alert {
+  background-color: aqua;
+}
+
 @media (min-width: 768px) {
   #header {
     grid-area: header;
