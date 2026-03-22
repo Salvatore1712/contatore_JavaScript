@@ -90,27 +90,6 @@ listaUl.addEventListener("click", event =>{
     
     }
 
-    // **** GIOCO CRONOMETRO *****
-    else if(event.target.textContent === "cronometro"){
-        boxContatore.textContent = counter
-
-        // testo per bottoni
-        btnAumento.textContent = "START";
-        btnDecremento.textContent = "STOP";
-        btnReset.textContent = "RESET";
-
-        //inserimento bottoni nel box
-        boxButton.append(btnReset);
-        boxButton.append(btnDecremento);
-        boxButton.append(btnAumento);
-
-        // EVENTO CLICK PARTENZA CONTATORE
-        btnAumento.addEventListener("click", function(){
-            const maxNumber = 10;
-            let secondi = 0;
-            let timer = null;
-        })
-    }
 
     // **** PARI DISPARI ****
     else if(event.target.textContent === "pari dispari"){
