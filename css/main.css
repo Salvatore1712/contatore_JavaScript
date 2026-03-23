@@ -354,7 +354,6 @@ body {
   color: #1FE211;
   font-family: "Share Tech Mono", monospace;
   height: 110vh;
-  overflow: hidden;
 }
 
 #container-grid {

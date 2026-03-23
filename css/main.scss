@@ -1,10 +1,10 @@
-// importazione variabili
+// IMPORT VARIABILI
 @use "./abstract/variables";
 
-// importazione home style
+// IMPORT STILE HOME
 @use "./section/homePage";
 
-// importo bottoni stile
+// IMPORT STILE BOTTONI
 @use "./section/button";
 
 // FONT SHARE TECH MONO
@@ -24,7 +24,6 @@ body {
     // border: 1px solid yellow;
     font-family: variables.$fontFamilyText;
     height: 110vh;
-    overflow: hidden;
 }
 
 #container-grid {
@@ -51,7 +50,7 @@ body {
 
 
 
-// **** DESKTOP QUERY
+// **** DESKTOP QUERY ****
 @media (min-width:769px) {
     
     body {

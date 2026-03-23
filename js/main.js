@@ -1,11 +1,11 @@
 // MENU TENDINA RESPONSIVE
-//selezione elementi per menu
+//SELEZIONE ELEMENTI PER GESTIONE MENU
 const menuBtn = document.querySelector("#nav-bar")
 let listaUl = document.querySelector(".menu-lista");
 let iconMenu = document.querySelector(".icon-menu");
 const extraText = document.querySelector(".extra-text");
 
-// **** MOSTRA/NASCONDE MENU
+// **** MOSTRA / NASCONDE MENU
 menuBtn.addEventListener("click", (event)=> {
     if (listaUl.classList.contains("menu-show")) {
         listaUl.classList.remove("menu-show")
@@ -14,28 +14,28 @@ menuBtn.addEventListener("click", (event)=> {
     }
 })
 
-// selezione elementi e variabili giochi
-let counter = 0; //contatore
-const boxButton = document.querySelector(".box-button") //box che contiene i bottoni
-const boxContatore = document.querySelector("#numero") // box contenete num contatore
-let scoreText = document.querySelector("#info-score"); //span x punteggio
-let nameText = document.querySelector("#info-name"); // span per nome
-let cpuText = document.querySelector("#info-cpu"); // span per CPU SCORE
+// SELEZIONE ELEMENTI E VARIABILI PER GIOCHI
+let counter = 0; //CONTATORE
+const boxButton = document.querySelector(".box-button") //BOX CONTANITORE BOTTONI
+const boxContatore = document.querySelector("#numero") // BOX CONTENENTE CONTATORE
+let scoreText = document.querySelector("#info-score"); //SPAN PER PUNTEGGIO
+let nameText = document.querySelector("#info-name"); // SPAN PER NOME USER
+let cpuText = document.querySelector("#info-cpu"); // SPAN PER CPU PUNTEGGIO
 
 //CREAZIONE ELEMENTI BOTTONI
 const btnAumento = document.createElement("button");
 const btnDecremento = document.createElement("button");
 const btnReset = document.createElement("button");
 
-//immissione nome player
+//PROMPT PER RICHIESTA NOME USER
 let nome = prompt("INSERISCI NOME");
-nameText.textContent = nome.toUpperCase();
+nameText.textContent = (nome || "PLAYER_01").toUpperCase();
 
-//setta a zeo il punteggio user
+//IMPOSTA A ZERO IL PUNTEGGIO USER
 let scoreUser = 0;
 scoreText.textContent = scoreUser;
 
-//setta a zero il punteggio cpu
+//IMPOSTA A ZERO IL PUNTEGGIO CPU
 let punteggioCPU = 0;
 cpuText.textContent = punteggioCPU;
 
@@ -44,152 +44,107 @@ btnAumento.className = "btn";
 btnDecremento.className = "btn";
 btnReset.className = "btn reset";
 
+function renderButtons() {
+    boxButton.append(btnReset, btnDecremento, btnAumento);
+}
+
 // EVENTO SUL MENU SELEZIONA GIOCO IN BASE AL TESTO IN <LI>
+
 listaUl.addEventListener("click", event =>{
     
     // ******* GIOCO CONTATORE *********
     if(event.target.textContent === "contatore"){
         
         boxContatore.textContent = counter //set testo conuter = 0
+        extraText.textContent = "counter mode"
 
-        // testo per bottoni
+        // INSERIMENTO TESTO BOTTONI DINAMICI
         btnAumento.textContent = "INCR";
         btnDecremento.textContent = "DECR";
         btnReset.textContent = "RESET";
 
-        //inserimento bottoni nel box
-        boxButton.append(btnReset);
-        boxButton.append(btnDecremento);
-        boxButton.append(btnAumento);
+        //INSERIMENTO BOTTONI NEL BOX BOTTONI
+        renderButtons();
 
-
-        //funzione incremento
-        function incremento() {
+        btnAumento.onclick = function () {
             counter++;
             boxContatore.textContent = counter;
-        }
-        btnAumento.addEventListener("click", incremento);
+        };
 
 
-        //funzione decremento nel listener con limite minimo 0
-        btnDecremento.addEventListener("click", function(){
+        //FUNZIONE DECRENENTO CONTATORE CON MINIMO A 0 (NO NEGATIVI)
+        btnDecremento.onclick = function () {
             if (counter == 0){
                 return;
             }
             counter--;
             boxContatore.textContent = counter;
-            cpuText.textContent = 0;
-            
-        })
+        };
 
         // FUNZIONE DI RESET
-        btnReset.addEventListener("click", ()=>{
+        btnReset.onclick = () => {
             counter = 0;
             boxContatore.textContent = counter;
-        })
+        };
     
     }
 
 
-    // **** PARI DISPARI ****
+    // **** GIOCO PARI DISPARI ****
     else if(event.target.textContent === "pari dispari"){
         
         boxContatore.textContent = " ";
-        extraText.textContent = "select your button"
-        // testo per bottoni
+        extraText.textContent = "select your button";
+
+        // INSERIMENTO TESTO DINAMICO BOTTONI GIOCO PARI DISPARI
         btnAumento.textContent = "EVEN";
         btnDecremento.textContent = "ODD";
         btnReset.textContent = "RESET";
 
-        //inserimento bottoni nel box
-        boxButton.append(btnReset);
-        boxButton.append(btnDecremento);
-        boxButton.append(btnAumento);
+        //RICHIAMO FUNZIONE INSERIMENTO BOTTONI NEL BOX
+        renderButtons();
 
-        // scelta pari
-        btnAumento.addEventListener("click", function(){
+        // SE USER CLICCA TASTO PARI
+        btnAumento.onclick = function () {
             let numeroCasuale = Math.floor(Math.random()* 20);
-            if(numeroCasuale % 2 == 0){ // vinci bottone pari
+            if(numeroCasuale % 2 == 0){ // VINCITA SE PARI
                 boxContatore.textContent = "WIN";
                 scoreUser++
                 scoreText.textContent = scoreUser;
                 extraText.textContent = `Random Number: ${numeroCasuale}`;
-            } else {
+            } else { //PERDITA SE CLICK BOTTONE PARI
                 boxContatore.textContent = "LOSE";
                 punteggioCPU++;
                 cpuText.textContent = punteggioCPU;
                 extraText.textContent = `Random Number: ${numeroCasuale}`;
             }
-        })
+        };
 
-        //scelta dispari
-        btnDecremento.addEventListener("click", ()=>{
+        //SE USER CLICCA TASTO DISPARI
+        btnDecremento.onclick = () => {
             let numeroCasuale = Math.floor(Math.random()* 20);
             if(numeroCasuale % 2 == 0){ 
                 boxContatore.textContent = "LOSE";
                 punteggioCPU++;
                 cpuText.textContent = punteggioCPU;
                 extraText.textContent = `Numero Random: ${numeroCasuale}`;
-            } else { // vinci bottone dispari
+            } else { // VINCITA SE DISPARI
                 boxContatore.textContent = "WIN";
                 scoreUser++;
                 scoreText.textContent = scoreUser;
                 extraText.textContent = `Numero Random: ${numeroCasuale}`;
             }
-        })
+        };
 
-        // reset button
-        btnReset.addEventListener("click", ()=>{
-            //reset contatori
+        // FUNZIONE BOTTONE RESET
+        btnReset.onclick = () => {
+            //RESET DEI CONTATORI PUNTEGGI
             punteggioCPU = 0;
             cpuText.textContent = punteggioCPU;
             scoreUser = 0;
             scoreText.textContent = scoreUser;
-
             boxContatore.textContent = "";
-            extraText.textContent = "select your button"
-            // testo per bottoni
-            btnAumento.textContent = "PARI";
-            btnDecremento.textContent = "DISPARI";
-            btnReset.textContent = "RESET";
-
-            //inserimento bottoni nel box
-            boxButton.append(btnReset);
-            boxButton.append(btnDecremento);
-            boxButton.append(btnAumento);
-
-            
-            // scelta pari
-            btnAumento.addEventListener("click", function(){
-                let numeroCasuale = Math.floor(Math.random()* 20);
-                if(numeroCasuale % 2 == 0){
-                    boxContatore.textContent = "WIN";
-                    // scoreUser++
-                    // scoreText.textContent = scoreUser;
-                    extraText.textContent = `Numero Random: ${numeroCasuale}`;
-                } else {
-                    boxContatore.textContent = "LOSE";
-                    // punteggioCPU++;
-                    // cpuText.textContent = punteggioCPU;
-                    extraText.textContent = `Numero Random: ${numeroCasuale}`;
-                }
-            })
-
-            //scelta dispari
-            btnDecremento.addEventListener("click", ()=>{
-                let numeroCasuale = Math.floor(Math.random()* 20);
-                if(numeroCasuale % 2 == 0){
-                    boxContatore.textContent = "LOSE";
-                    // punteggioCPU++;
-                    // cpuText.textContent = punteggioCPU;
-                    extraText.textContent = `Numero Random: ${numeroCasuale}`;
-                } else {
-                    boxContatore.textContent = "WIN";
-                    // scoreUser++;
-                    // scoreText.textContent = scoreUser;
-                    extraText.textContent = `Numero Random: ${numeroCasuale}`;
-                }
-            })
-        })
+            extraText.textContent = "select your button";
+        };
     }
 })
