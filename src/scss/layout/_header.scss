@@ -1,0 +1,82 @@
+@use "../abstract/variables" as variabili;
+@use "../abstract/animations" as animazioni;
+
+// - - - - H E A D E R - - - - - 
+.header {
+    grid-area: header;
+    width: 100%;
+    text-align: center;
+
+    // DESKTOP HEADER
+    @media (min-width:1024px) {
+        grid-area: header;
+        width: 100%;
+        text-align: center;
+        height: auto;
+    }
+
+    &__title {
+        color: variabili.$coloreBlu;
+        font-size: 38px;
+        padding: 0;
+        margin: 8px;
+        text-shadow: 2px 2px 2px grey;
+    }
+
+
+    // - - - - MENU BAR - - - -
+    .nav {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        // border: 1px solid salmon;
+        background-color: variabili.$coloreBluScuro;
+        margin-top: 8px;
+        cursor: pointer;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+
+        &__icon {
+            width: 100%;
+            color: white;
+            animation: lampeggiamento 1s ease-in-out infinite;
+        }
+
+        &__list {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            background-color: variabili.$coloreBackgroundElementi;
+            box-shadow: 0px 3px 4px grey;
+            padding: 0;
+
+            li {
+                list-style: none;
+                padding: 10px 0 10px 0;
+                list-style: none;
+                width: 100%;
+                color: black;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+
+            li:hover {
+                background-color: variabili.$coloreBluScuro;
+                color: white;
+                
+                a{
+                    color: white;
+                }
+            }
+        }
+    }
+}

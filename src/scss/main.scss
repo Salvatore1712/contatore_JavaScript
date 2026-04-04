@@ -1,0 +1,11 @@
+//IMPORT VARIABILI
+@use "./abstract/variables" as variabili;
+@use "./abstract/animations" as animazioni;
+@use "./base/reset";
+
+//IMPORT HEADER STYLE
+@use "./layout/header" as header;
+
+@use "./components/button" as button_style;
+
+@use "./pages/homePage" as home_page;
