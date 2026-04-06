@@ -1,0 +1,36 @@
+//***** FOOTER *****
+@use "../abstract/variables" as variabili;
+.footer {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    // border: 1px solid variabili.$coloreVerde;
+    grid-area: "footer";
+    width: 100%;
+    margin: 16px auto;
+    border-radius: 8px;
+    background-color: variabili.$coloreArancione;
+
+    @media (min-width:1024px) {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        grid-area: footer;
+    }
+}
+
+    a{ 
+        text-decoration: underline;
+        padding: 5px;
+        color: white;
+
+        @media (min-width:1024px) {
+            text-decoration: underline;
+            font-size: 14px;
+            color: white
+    }
+}

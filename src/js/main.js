@@ -5,14 +5,6 @@ let listaUl = document.querySelector(".nav__list");
 let iconMenu = document.querySelector(".nav__icon");
 const extraText = document.querySelector(".main__text");
 
-// **** MOSTRA / NASCONDE MENU  -- OK
-menuBtn.addEventListener("click", (event)=> {
-    if (listaUl.classList.contains("menu__show")) {
-        listaUl.classList.remove("menu__show")
-    }else{
-        listaUl.classList.add("menu__show")
-    }
-})
 
 // SELEZIONE ELEMENTI E VARIABILI PER GIOCHI
 let counter = 0; //CONTATORE
@@ -21,13 +13,15 @@ const boxContatore = document.querySelector(".main__contatore__numero") // BOX C
 let scoreText = document.querySelector("#info-score"); //SPAN PER PUNTEGGIO
 let nameText = document.querySelector("#info-name"); // SPAN PER NOME USER
 let cpuText = document.querySelector("#info-cpu"); // SPAN PER CPU PUNTEGGIO
+let titoloGico = document.querySelector(".main__titles__big"); // SPAN PER CPU PUNTEGGIO
+let textGioco = document.querySelector(".main__text");
 
 //CREAZIONE ELEMENTI BOTTONI
 const btnAumento = document.createElement("button");
 const btnDecremento = document.createElement("button");
 const btnReset = document.createElement("button");
 
-//PROMPT PER RICHIESTA NOME USER
+//INSERIMENTO NOME PLAYER
 let nome = "PLAYER_01";
 nameText.textContent = nome;
 
@@ -49,18 +43,17 @@ function renderButtons() {
 }
 
 // EVENTO SUL MENU SELEZIONA GIOCO IN BASE AL TESTO IN <LI>
-
 listaUl.addEventListener("click", event =>{
     
     // ******* GIOCO CONTATORE *********
-    if(event.target.textContent === "contatore"){
-        
+    if(event.target.textContent === "CONTATORE"){
+        titoloGico.textContent = "GIOCO CONTATORE";
         boxContatore.textContent = counter //set testo conuter = 0
-        extraText.textContent = "counter mode"
+        textGioco.textContent = "INCREMENTA O DECREMENTA CONTATORE"
 
         // INSERIMENTO TESTO BOTTONI DINAMICI
-        btnAumento.textContent = "INCR";
-        btnDecremento.textContent = "DECR";
+        btnAumento.textContent = "+";
+        btnDecremento.textContent = "-";
         btnReset.textContent = "RESET";
 
         //INSERIMENTO BOTTONI NEL BOX BOTTONI
@@ -91,14 +84,14 @@ listaUl.addEventListener("click", event =>{
 
 
     // **** GIOCO PARI DISPARI ****
-    else if(event.target.textContent === "pari dispari"){
-        
-        boxContatore.textContent = " ";
-        extraText.textContent = "select ood or even button";
+    else if(event.target.textContent === "PARI DISPARI"){
+        titoloGico.textContent = "GIOCO PARI DISPARI";
+        boxContatore.textContent = "";
+        extraText.textContent = "INDOVINA SE PARI O DISPARI";
 
         // INSERIMENTO TESTO DINAMICO BOTTONI GIOCO PARI DISPARI
-        btnAumento.textContent = "EVEN";
-        btnDecremento.textContent = "ODD";
+        btnAumento.textContent = "PARI";
+        btnDecremento.textContent = "DISP";
         btnReset.textContent = "RESET";
 
         //RICHIAMO FUNZIONE INSERIMENTO BOTTONI NEL BOX
@@ -111,28 +104,28 @@ listaUl.addEventListener("click", event =>{
                 boxContatore.textContent = "WIN";
                 scoreUser++
                 scoreText.textContent = scoreUser;
-                extraText.textContent = `Random Number: ${numeroCasuale}`;
+                extraText.textContent = `NUMERO RANDOM: ${numeroCasuale}`;
             } else { //PERDITA SE CLICK BOTTONE PARI
                 boxContatore.textContent = "LOSE";
                 punteggioCPU++;
                 cpuText.textContent = punteggioCPU;
-                extraText.textContent = `Random Number: ${numeroCasuale}`;
+                extraText.textContent = `NUMERO RANDOM: ${numeroCasuale}`;
             }
         };
 
         //SE USER CLICCA TASTO DISPARI
         btnDecremento.onclick = () => {
-            let numeroCasuale = Math.floor(Math.random()* 20);
+            let numeroCasuale = Math.floor(Math.random()* 20)+1;
             if(numeroCasuale % 2 == 0){ 
                 boxContatore.textContent = "LOSE";
                 punteggioCPU++;
                 cpuText.textContent = punteggioCPU;
-                extraText.textContent = `Numero Random: ${numeroCasuale}`;
+                extraText.textContent = `NUMERO RANDOM: ${numeroCasuale}`;
             } else { // VINCITA SE DISPARI
                 boxContatore.textContent = "WIN";
                 scoreUser++;
                 scoreText.textContent = scoreUser;
-                extraText.textContent = `Numero Random: ${numeroCasuale}`;
+                extraText.textContent = `NUMERO RANDOM: ${numeroCasuale}`;
             }
         };
 
@@ -144,7 +137,7 @@ listaUl.addEventListener("click", event =>{
             scoreUser = 0;
             scoreText.textContent = scoreUser;
             boxContatore.textContent = "";
-            extraText.textContent = "select your button";
+            extraText.textContent = "INDOVINA SE PARI O DISPARI";
         };
     }
 })

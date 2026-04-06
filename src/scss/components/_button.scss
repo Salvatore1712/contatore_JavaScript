@@ -7,14 +7,30 @@
     justify-content: center;
     width: 75px;
     height: 30px;
-    border: 2px solid variabili.$coloreBlu;
-    background-color: variabili.$coloreNero;
+    border-radius: 8px;
+    border: none;
     color: white;
     font-size: 18px;
     box-shadow: 0 0 5px 2px variabili.$coloreBlu;
+    box-shadow: none;
+    font-weight: bold;
+    background-color: variabili.$coloreBluScuro;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+
+    &:hover {
+        transition: 300ms ease-in-out;
+        transform: scale(1.1);
+        box-shadow: 2px 2px 3px gray;
+    }
 }
 
 .reset {
-    border: 2px solid variabili.$coloreArancione;
-    box-shadow: 0 0 5px 2px variabili.$coloreArancione;
+    background-color: variabili.$coloreArancione;
+
+    &:hover {
+        transition: 300ms ease-in-out;
+        transform: scale(1.1);
+        box-shadow: 2px 2px 3px gray;
+    }
 }

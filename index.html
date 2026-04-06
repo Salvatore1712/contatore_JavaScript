@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatore in JS</title>
-    <link rel="stylesheet" href="/dist/css/main.css">
+    <link rel="stylesheet" href="./dist/css/main.css">
     
     <!-- FAVICON -->
-     <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+     <link rel="icon" type="image/png" href="./img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./img/favicon/site.webmanifest" />
 
     <!-- FONT GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +23,10 @@
     <div id="container">
         <!-- HEADER -->
         <header class="header grid-item">
-            <h1 class="header__title">JS COUNTER</h1>
+            <img src="/img/logo_counter.svg" alt="logo javascript counter image">
             <nav class="nav">
                 <span class="nav__icon">-> SCEGLI IL GIOCO <-</span>
-                <ul class="nav__list">
+                <ul class="nav__list menu__show">
                     <li>CONTATORE</li>
                     <li>PARI DISPARI</li>
                 </ul>
@@ -54,7 +54,7 @@
         <!-- MAIN -->
         <main class="main grid-item">
             <div class="main__titles">
-                <h4 class="main__titles__big">MODULO CONTATORE</h4>
+                <h4 class="main__titles__big"></h4>
             </div>
 
             <!-- BOX CONTATORE -->
@@ -65,34 +65,24 @@
                 </div>
                 <span class="main__text">SCEGLI UN GIOCO DAL MENU</span>
                 <div class="main__button">
-                    <!-- INSERIRE QUI BOTTONI -->
+                    <!-- INSERIRE BOTTONI DINAMICI -->
                 </div>
                 
             </div>
             
-            <!-- TESTI CONSOLLE -->
-            <div class="main__randomText">
-                    <p>SEQUENZA AVVIATA</p>
-                    <p>CONTROLLO MEMORIA:___ <span>ATTESA INPUT</span></p>
-                    <br><br>
-                    <p>*__ACCESS CONSENTITO__*</p>
-            </div>
-
-            <p>powered by <img src="/src/img/logo_deRoma_small.svg" alt="logo salvatore de roma web developer green" class="main__image"></p>
         </main> 
         
 
         <!-- SIDEBAR -->
         <section class="sidebar grid-item">
             <div class="sidebar__score">
-                <h3>PANNELLO PUNTEGGIO</h3>
+                <h3 class="sidebar__title">PANNELLO PUNTEGGIO</h3>
                 <!-- INFO PUNTEGGIO -->
-                    <ul class="sidebar__score__info">
-                        <li>USER.... <span id="info-name"></span></li>
-                        <li>PUNTEGGIO GIOCATORE.... <span id="info-score"></span></li>
-                        <li>PUNTEGGIO CPU.... <span id="info-cpu"></span></li>
-                    </ul>
-                <img src="/src/img/hacker_image.png" alt="immagine hacker nero e verde fluo" width="250" class="sidebar__image">
+                <ul class="sidebar__score__info">
+                    <li><span id="info-name"></span></li>
+                    <li>PUNTEGGIO GIOCATORE.... <span id="info-score"></span></li>
+                    <li>PUNTEGGIO CPU.... <span id="info-cpu"></span></li>
+                </ul>
             </div>
         </section>
 
@@ -106,6 +96,7 @@
     </div>
 
     <!-- SCRIPT -->
-    <script type"module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+    <script src="./src/js/menu_action.js"></script>
 </body>
 </html>
