@@ -207,6 +207,8 @@ body {
     height: auto;
     display: block;
     padding: 16px;
+    margin-bottom: 16px;
+    text-align: center;
 
     @media (min-width:1024px) {
         height: 100%;
@@ -260,6 +262,10 @@ body {
         background-color: variabili.$coloreBluScuro;
         padding: 5px;
         border-radius: 8px;
+    }
+
+    &__image {
+        margin-top: 16px;
     }
 }
 

@@ -350,6 +350,8 @@ body {
   height: auto;
   display: block;
   padding: 16px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 @media (min-width: 1024px) {
   .sidebar {
@@ -399,6 +401,9 @@ body {
   background-color: #0c6fb0;
   padding: 5px;
   border-radius: 8px;
+}
+.sidebar__image {
+  margin-top: 16px;
 }
 
 .footer {
