@@ -1,276 +1,183 @@
-# JS COUNTER.exe
+# JavaScript Counter + Pari/Dispari
 
 <p align="center">
-  <img src="https://img.shields.io/badge/JavaScript-Vanilla-1FE211?style=for-the-badge&labelColor=000000" alt="JavaScript Vanilla">
-  <img src="https://img.shields.io/badge/SCSS-Modular-1FE211?style=for-the-badge&labelColor=000000" alt="SCSS Modular">
-  <img src="https://img.shields.io/badge/UI-Retro%20Arcade-FF0004?style=for-the-badge&labelColor=000000" alt="Retro Arcade UI">
+  <img src="https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=for-the-badge&labelColor=111111" alt="JavaScript Vanilla">
+  <img src="https://img.shields.io/badge/SCSS-Modular-CC6699?style=for-the-badge&labelColor=111111" alt="SCSS Modular">
+  <img src="https://img.shields.io/badge/Layout-Responsive-0A66C2?style=for-the-badge&labelColor=111111" alt="Responsive Layout">
 </p>
 
-<p align="center">
-  Progetto front-end in <strong>JavaScript puro</strong> con interfaccia rétro ispirata ai vecchi monitor CRT:
-  nero, verde fosforo, dettagli rossi, font arcade e logica guidata dagli eventi.
-</p>
+Applicazione front-end in JavaScript puro con due mini giochi:
+- `Contatore`
+- `Pari / Dispari`
 
----
+L'interfaccia e i contenuti principali vengono aggiornati in tempo reale tramite manipolazione del DOM, senza ricaricare la pagina.
 
 ## Screenshot
 
 <p align="center">
-  <img src="./img/Screenshot 2026-03-22 alle 3.56.02 PM.png" alt="Preview del progetto JS COUNTER.exe" width="100%">
+  <img src="./img/ScreenshotAppJS_2.png" alt="Preview del progetto" width="100%">
 </p>
-
-> Anteprima illustrativa dello stile grafico del progetto.
-
----
 
 ## Panoramica
 
-Il progetto nasce dal brief presente in `progetto.txt`: realizzare un counter in JavaScript vanilla con interfaccia e controlli creati tramite manipolazione del DOM.
-
-Rispetto alla consegna base, il progetto è stato esteso con una piccola dashboard interattiva che include:
-
-- un modulo `Counter`
-- un mini gioco `Pari / Dispari`
-- un menu a tendina responsive
-- uno `score panel` con nome giocatore, punteggio utente e punteggio CPU
-- una forte identità visiva rétro / terminale
-
----
-
-## Obiettivi del progetto
-
-- visualizzare un valore iniziale del counter
-- incrementare e decrementare il valore tramite pulsanti creati dinamicamente
-- impedire al counter di scendere sotto `0`
-- gestire il comportamento dell'interfaccia con eventi JavaScript
-- mantenere una struttura separata tra HTML, SCSS/CSS e JavaScript
-- arricchire il progetto con funzionalità aggiuntive coerenti con il brief
-
----
+Il progetto nasce dal brief didattico del contatore in JavaScript (`progetto.txt`) ed estende la consegna con:
+- menu a tendina per scegliere il gioco
+- pulsanti dinamici riutilizzati tra modalità diverse
+- pannello punteggio con score utente e CPU
+- layout responsive mobile/desktop con SCSS modulare
 
 ## Funzionalità
 
-### 1. Counter
+### 1) Modalità `CONTATORE`
+- valore iniziale `0`
+- pulsanti dinamici `+`, `-`, `RESET`
+- decremento bloccato a `0` (no negativi)
+- aggiornamento live del display principale
 
-- visualizza il numero nel display centrale
-- genera dinamicamente i pulsanti `INCR`, `DECR` e `RESET`
-- incrementa e decrementa il valore del contatore
-- blocca il decremento quando il valore è già a `0`
+### 2) Modalità `PARI DISPARI`
+- pulsanti dinamici `PARI`, `DISP`, `RESET`
+- generazione numero casuale ad ogni click
+- output `WIN` / `LOSE`
+- aggiornamento punteggio giocatore e CPU
+- reset completo dei punteggi di sessione
 
-### 2. Pari / Dispari
+## Grafica attuale
 
-- permette di scegliere tra `EVEN` e `ODD`
-- genera un numero casuale
-- mostra `WIN` oppure `LOSE`
-- aggiorna lo score del giocatore e della CPU
-- consente il reset del pannello di gioco
+La UI attuale usa un tema chiaro con accenti blu/arancione:
+- sfondo con gradiente azzurro/bianco
+- box principali con bordi arrotondati
+- pulsanti blu con variante `reset` arancione
+- animazione `lampeggiamento` su elementi chiave (menu/icona)
+- font principale: `Roboto`
 
-### 3. Interfaccia
-
-- menu a tendina gestito via JavaScript
-- richiesta iniziale del nome giocatore con `prompt()`
-- score panel laterale con dati aggiornati in tempo reale
-- layout responsive mobile / desktop
-
----
-
-## Stack
-
-```txt
-HTML5
-SCSS
-CSS3
-JavaScript Vanilla
-Google Fonts
-- Press Start 2P
-- Share Tech Mono
-```
-
----
-
-## Identità visiva
-
-L'interfaccia è progettata come un piccolo software arcade anni '80:
-
-- sfondo nero `#000000`
-- verde fosforo `#1FE211`
-- rosso acceso `#FF0004`
-- tipografia arcade per i titoli
-- font monospace tecnico per testi e interfaccia
-- bordi neon, lampeggiamenti e effetto interferenza
-
-Variabili principali:
+Variabili principali (`src/scss/abstract/_variables.scss`):
 
 ```scss
 $coloreNero: #000;
-$coloreVerde: #1FE211;
-$coloreVerdeScuro: #17b70b;
-$coloreRosso: #FF0004;
-$fontFamilyMain: "Press Start 2P", system-ui;
-$fontFamilyText: "Share Tech Mono", monospace;
+$coloreBlu: #118ee2;
+$coloreBluScuro: #0c6fb0;
+$coloreArancione: #ff7300;
+$coloreBackgroundElementi: #C6DEF5;
+$fontFamilyMain: "Roboto", sans-serif;
+$fontSize: 16px;
 ```
 
----
+## Architettura pagina
 
-## Struttura reale del progetto
+`index.html` è organizzato in blocchi principali:
+- `header`: logo + menu giochi
+- `aside`: dashboard descrittiva (desktop)
+- `main`: titolo gioco, display centrale, area pulsanti
+- `sidebar`: pannello punteggio + branding
+- `footer`: contatti e credits
 
-```bash
+Su desktop viene usata una griglia a 3 colonne (`aside`, `main`, `sidebar`), su mobile layout verticale.
+
+## Logica JavaScript
+
+### `src/js/main.js`
+Gestisce il core applicativo:
+- stato del contatore
+- stato punteggi (`scoreUser`, `punteggioCPU`)
+- setup iniziale dashboard (`PLAYER_01` e valori a `0`)
+- render dei bottoni dinamici
+- gestione click sulle voci menu (`CONTATORE`, `PARI DISPARI`)
+- binding dinamico degli handler in base alla modalità selezionata
+
+### `src/js/menu_action.js`
+Gestisce apertura/chiusura del menu a tendina tramite toggle della classe:
+- `menu__show`
+
+## Struttura progetto (reale)
+
+```text
 .
 ├── index.html
 ├── README.md
 ├── progetto.txt
-├── css
-│   ├── main.css
-│   ├── main.css.map
-│   ├── main.scss
-│   ├── abstract
-│   │   └── _variables.scss
-│   └── section
-│       ├── _button.scss
-│       └── _homePage.scss
-├── js
-│   └── main.js
-└── img
-    ├── hacker_image.png
-    └── readme-preview.svg
+├── dist/
+│   └── css/
+│       ├── main.css
+│       └── main.css.map
+├── src/
+│   ├── img/
+│   │   ├── favicon/
+│   │   ├── image_conter_app.svg
+│   │   ├── image_even_odd_app.svg
+│   │   ├── logo_deRoma_small.svg
+│   │   ├── readme-preview.svg
+│   │   └── ...
+│   ├── js/
+│   │   ├── main.js
+│   │   └── menu_action.js
+│   └── scss/
+│       ├── main.scss
+│       ├── abstract/
+│       │   ├── _animations.scss
+│       │   └── _variables.scss
+│       ├── base/
+│       │   └── _reset.scss
+│       ├── components/
+│       │   └── _button.scss
+│       ├── layout/
+│       │   ├── _footer.scss
+│       │   └── _header.scss
+│       └── pages/
+│           └── _homePage.scss
+└── img/
+    ├── favicon/
+    └── ...
 ```
 
----
+## SCSS e compilazione CSS
 
-## Architettura della pagina
+Entry point SCSS:
+- `src/scss/main.scss`
 
-La pagina è organizzata come una dashboard composta da:
+Output CSS usato dalla pagina:
+- `dist/css/main.css`
 
-- `header` con titolo, versione e menu giochi
-- `aside` descrittivo con spiegazione della logica event-driven
-- `main` con display centrale e area pulsanti
-- `sidebar` con score panel e immagine decorativa
-- `footer` con riferimenti autore
-
-Estratto della struttura HTML:
-
-```html
-<main id="main" class="grid-item">
-  <div id="title-main">
-    <h4>COUNTER MODULE_</h4>
-    <h6>root/project/destroy</h6>
-  </div>
-
-  <div class="box-contatore">
-    <div id="numero"></div>
-    <span class="extra-text">+++++++++++++++++++++++</span>
-    <div class="box-button"></div>
-  </div>
-</main>
-```
-
----
-
-## Logica JavaScript
-
-Tutta la logica è contenuta in `js/main.js`.
-
-Il file gestisce:
-
-- apertura e chiusura del menu responsive
-- selezione del gioco tramite click sugli elementi del menu
-- creazione dinamica dei pulsanti
-- aggiornamento del display principale
-- aggiornamento del punteggio utente e CPU
-- acquisizione del nome giocatore
-
-Esempio di creazione dinamica dei controlli:
-
-```js
-const btnAumento = document.createElement("button");
-const btnDecremento = document.createElement("button");
-const btnReset = document.createElement("button");
-
-btnAumento.className = "btn";
-btnDecremento.className = "btn";
-btnReset.className = "btn reset";
-```
-
-Esempio di logica del counter:
-
-```js
-function incremento() {
-  counter++;
-  boxContatore.textContent = counter;
-}
-
-btnDecremento.addEventListener("click", function () {
-  if (counter == 0) {
-    return;
-  }
-  counter--;
-  boxContatore.textContent = counter;
-});
-```
-
----
-
-## Requisiti del brief originale
-
-Dal file `progetto.txt` il progetto doveva:
-
-- essere sviluppato esclusivamente in JavaScript puro
-- creare dinamicamente l'interfaccia del counter tramite DOM manipulation
-- mostrare un valore iniziale pari a `0`
-- permettere incremento e decremento tramite pulsanti
-- mantenere una buona organizzazione della struttura del progetto
-
-Il progetto rispetta questi requisiti e aggiunge una personalizzazione grafica e funzionale più ampia.
-
----
-
-## Avvio del progetto
-
-Puoi eseguire il progetto in due modi.
-
-### Apertura diretta
-
-Apri `index.html` nel browser.
-
-### Server locale
-
-Se preferisci usare un server locale:
+Comandi utili dalla root del progetto:
 
 ```bash
-npx serve
+# compilazione singola
+sass src/scss/main.scss dist/css/main.css
+
+# watch continuo
+sass --watch src/scss/main.scss:dist/css/main.css
+
+# alternativa senza installazione globale
+npx sass --watch src/scss/main.scss:dist/css/main.css
 ```
 
-In alternativa puoi usare `Live Server` da VS Code.
+## Avvio progetto
 
----
+1. Apri `index.html` nel browser.
+2. In parallelo, avvia il watch Sass se stai modificando gli stili.
 
-## Responsive e stile
+Esempio:
 
-Lo stile è organizzato in SCSS modularizzato:
+```bash
+npx sass --watch src/scss/main.scss:dist/css/main.css
+```
 
-- `css/abstract/_variables.scss` per colori, font e variabili
-- `css/section/_button.scss` per i bottoni
-- `css/section/_homePage.scss` per layout, sezioni e animazioni
-- `css/main.scss` come file principale di importazione
+## Requisiti coperti del brief
 
-Il layout passa da una struttura verticale mobile a una griglia desktop a tre colonne.
+- JavaScript vanilla
+- manipolazione DOM
+- contatore con incremento/decremento/reset
+- valore iniziale a `0`
+- struttura ordinata tra HTML, JS, SCSS/CSS
 
----
+## Miglioramenti già presenti
+
+- multi-gioco tramite menu
+- score panel con stato persistente durante la sessione
+- UI responsive con separazione in partial SCSS
+- branding personale e favicon completo
 
 ## Autore
 
 **Salvatore De Roma**
-
 - Sito: `salvatorederoma.it`
 - Email: `info@salvatorederoma.it`
-
----
-
-## Nota
-
-Il progetto è pensato come esercizio didattico front-end e come estensione creativa del brief originale del counter, con particolare attenzione a:
-
-- manipolazione del DOM
-- gestione eventi
-- organizzazione SCSS
-- coerenza grafica dell'interfaccia
