@@ -76,12 +76,13 @@ body {
         border-radius: 8px;
 
     &__title {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: bold;
             color: white;
             background-color: variabili.$coloreArancione;
             padding: 5px;
             border-radius: 8px;
+            box-shadow: 2px 2px 3px gray;
 
             &--small {
                 font-size: 20px;
@@ -94,9 +95,9 @@ body {
         border-radius: 8px;
         gap: 16px;
         width: 100%;
-        border: 1px solid saddlebrown;
         padding: 8px;
         background-color: white;
+        box-shadow: 2px 2px 3px lightgrey;
         }
     }
     
@@ -119,6 +120,7 @@ body {
         margin: 8px 0 0 0;
         box-sizing: border-box;
         background: variabili.$coloreArancione;
+        box-shadow: 2px 2px 3px gray;
 
         &__big {
             font-size: 20px;
@@ -207,7 +209,6 @@ body {
     height: auto;
     display: block;
     padding: 16px;
-    margin-bottom: 16px;
 
     @media (min-width:1024px) {
         height: 100%;
@@ -236,6 +237,8 @@ body {
             font-size: 20px;
             margin-top: 8px;
             height: 100%;
+            box-shadow: 2px 2px 3px lightgray;
+            height: 250 px;
 
             #info-name, #info-score, #info-cpu {
                 color: variabili.$coloreArancione;
@@ -262,6 +265,8 @@ body {
         background-color: variabili.$coloreBluScuro;
         padding: 5px;
         border-radius: 8px;
+        box-shadow: 2px 2px 3px gray;
+        width: 100%;
     }
 
     &__image {

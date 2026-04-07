@@ -236,12 +236,13 @@ body {
     border-radius: 8px;
   }
   .aside__title {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: bold;
     color: white;
     background-color: #ff7300;
     padding: 5px;
     border-radius: 8px;
+    box-shadow: 2px 2px 3px gray;
   }
   .aside__title--small {
     font-size: 20px;
@@ -252,9 +253,9 @@ body {
     border-radius: 8px;
     gap: 16px;
     width: 100%;
-    border: 1px solid saddlebrown;
     padding: 8px;
     background-color: white;
+    box-shadow: 2px 2px 3px lightgrey;
   }
 }
 
@@ -273,6 +274,7 @@ body {
   margin: 8px 0 0 0;
   box-sizing: border-box;
   background: #ff7300;
+  box-shadow: 2px 2px 3px gray;
 }
 .main__titles__big {
   font-size: 20px;
@@ -350,7 +352,6 @@ body {
   height: auto;
   display: block;
   padding: 16px;
-  margin-bottom: 16px;
 }
 @media (min-width: 1024px) {
   .sidebar {
@@ -380,6 +381,8 @@ body {
   font-size: 20px;
   margin-top: 8px;
   height: 100%;
+  box-shadow: 2px 2px 3px lightgray;
+  height: 250px;
 }
 .sidebar__score__info #info-name, .sidebar__score__info #info-score, .sidebar__score__info #info-cpu {
   color: #ff7300;
@@ -401,6 +404,8 @@ body {
   background-color: #0c6fb0;
   padding: 5px;
   border-radius: 8px;
+  box-shadow: 2px 2px 3px gray;
+  width: 100%;
 }
 .sidebar__image {
   margin-top: 16px;
