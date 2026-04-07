@@ -382,7 +382,7 @@ body {
   margin-top: 8px;
   height: 100%;
   box-shadow: 2px 2px 3px lightgray;
-  height: 250px;
+  height: 250 px;
 }
 .sidebar__score__info #info-name, .sidebar__score__info #info-score, .sidebar__score__info #info-cpu {
   color: #ff7300;
