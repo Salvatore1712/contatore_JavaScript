@@ -261,6 +261,7 @@ body {
 .main {
   width: 100%;
   grid-area: "main";
+  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -440,6 +441,4 @@ a {
     font-size: 14px;
     color: white;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
